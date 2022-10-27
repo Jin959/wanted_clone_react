@@ -1,0 +1,64 @@
+/************** section6 *****************/
+
+.Section6
+{
+    height: 569.94px;
+}
+
+.Section6 .section_wrapper
+{
+    border-bottom: 0px;
+}
+
+.Section6 .item_link_img_wrapper
+{
+    width: 522px;
+    height: 273px;
+}
+
+.Section6 .section_content a
+{
+    width: 522px;
+}
+
+.item_stat
+{
+    margin-top: 12px;
+    height: 20px;
+}
+
+.item_stat span
+{
+    font-size: 11px;
+    font-weight: 700;
+    border: 1px solid black;
+    border-radius: 2px;
+    padding: 3px;
+    margin: 3px;
+}
+
+.item_stat
+
+.online_icon
+{
+    background-color: black;
+    color: white;
+}
+
+.networking_icon
+{
+    color: #a149e4;
+    border-color: #a149e4;
+}
+
+.Section6 .contents_title
+{
+    width: 522px;
+}
+
+.Section6 .contents_subtitle
+{
+    width: 522px;
+    height: 20px;
+    padding: 0px;
+}

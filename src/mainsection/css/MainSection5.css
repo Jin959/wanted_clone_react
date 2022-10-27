@@ -1,0 +1,33 @@
+/************** section5 *****************/
+
+.Section5
+{
+    height: 64.4px;
+}
+
+.Section5 a
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 1060px;
+    font-size: 16px;
+    border-radius: 50px;
+    /* Permalink - use to edit and share this gradient: https://colorzilla.com/gradient-editor/#02a6fe+-12,2f5cef+49,0464fe+82,5fd2d8+100 */
+    background: rgb(2,166,254); /* Old browsers */
+    background: -moz-linear-gradient(left,  rgb(2,166,254) -12%, rgb(47,92,239) 49%, rgb(4,100,254) 82%, rgb(95,210,216) 110%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(left,  rgb(2,166,254) -12%,rgb(47,92,239) 49%,rgb(4,100,254) 82%,rgb(95,210,216) 110%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to right,  rgb(2,166,254) -12%,rgb(47,92,239) 49%,rgb(4,100,254) 82%,rgb(95,210,216) 110%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#02a6fe', endColorstr='#5fd2d8',GradientType=1 ); /* IE6-9 */
+}
+
+.Section5 div
+{
+    color: rgb(250, 250, 250);
+}
+
+.Section5 svg
+{
+    fill:rgb(250, 250, 250);
+}

@@ -1,0 +1,81 @@
+/*------------top banner-----------*/
+
+.Section1
+{
+    /* 버튼의 absolute 포지션을 위해 relative*/
+    position: relative;
+    overflow: hidden;
+
+    padding-top: 25px;
+    height: 304.7;
+    border-bottom: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Section1 div
+{
+    width: 1060;
+    padding: 0 12px;
+    /*
+    transition: 0.3s linear;  /*testing
+    */
+}
+
+.Section1 svg
+{
+    border-radius: 5px;
+}
+
+.Section1 > button
+{
+    position: absolute;
+    
+    opacity: 0.5;
+
+    border-radius: 15px;
+    width: 30px;
+    height: 60px;
+    font-size: 16px;
+    z-index: 10;
+}
+
+.Section1-prev_btn
+{
+    right: 90%;
+}
+
+.Section1-nxt_btn
+{
+    left: 90%;
+}
+
+.sliding_nxt
+{
+    transition: 0.3s linear;
+    transform: translate(100%, 0);
+}
+
+/*
+.sliding_nxt_reverse
+{
+    transition: transform 0s linear;
+    transform: translate(-100%, 0);
+}
+*/
+
+.sliding_prev
+{
+    transition: transform 0.3s linear;
+    transform: translate(-100%, 0);
+}
+
+/*
+.sliding_prev_reverse
+{
+    transition: transform 0s linear;
+    transform: translate(100%, 0);
+}
+*/

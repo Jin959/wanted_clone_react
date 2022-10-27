@@ -1,0 +1,93 @@
+/********* ModalLogin *************/
+
+.modal_main h1
+{
+    padding-top: 20px;
+    color: black;
+    font-size: 22px;
+    padding-bottom: 10px;
+    line-height: 1.5;
+}
+
+.modal_main h2
+{
+    line-height: 1.5;
+    padding: 10px 0;
+}
+
+.modal_login_sns_title
+{
+    line-height: 2.0;
+    font-weight: 600;
+}
+
+.modal_login_sns
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal_login_sns button > div:nth-child(2)
+{
+    color: #888888;
+    font-size: 10px;
+}
+
+.modal_login_sns svg
+{
+    margin: 0;   
+    width: 56px;
+    height: 56px;
+}
+
+.modal_login_sns button:nth-child(3) svg
+{
+    border: 1px solid #e1e2e3;
+    border-radius: 50%;
+}
+
+.modal_login_contract
+{
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.modal_login_contract a
+{
+    color: #767676;
+    padding: 0 5px;
+    font-size: 12px;
+}
+
+.modal_login_inc
+{
+    font-size: 12px;
+    font-weight: 500;
+    padding-bottom: 20px;
+}
+
+.ModalLogin .modal_lang
+{
+    position: relative;
+}
+
+.ModalLogin .modal_lang > div
+{
+    border: 1px solid black;
+    position: absolute;
+    top: 7px;
+    left: 35%;
+    width: 21px;
+    height: 14px;
+}
+
+.ModalLogin .modal_lang > select
+{
+    border: 1px solid #e1e2e3;
+    border-radius: 5px;
+    padding-left: 45px;
+    font-size: 13px;
+    font-weight: 600;
+    width: 140px;
+    height: 30px;
+}

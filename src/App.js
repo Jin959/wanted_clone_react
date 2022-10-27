@@ -1,33 +1,41 @@
 import './css/css_reset.css';
 
-//import {useState} from 'react';
+import { useEffect, useState, useRef } from 'react';
 import Nav from './Nav';
 import Main from './Main';
 import Footer from './Footer';
-//import Modal from './Modal';
-
-
-
+import Modal from './modal/Modal';
 
 function App() {
-    /*
-    const [modalFlag, setModalFlag] = useState(false);
+  const [modalFlag, setModalFlag] = useState(false);
+  const [limitScrollFlag, setLimitScrollFlag] = useState(false);
+  const appBody = useRef();
 
-    const getFlag = (modalFlag) => {
-        setModalFlag(modalFlag);
-        console.log(modalFlag);
+  useEffect(() => {
+    if (limitScrollFlag) {
+      appBody.current.style.overflow = 'hidden';
+      appBody.current.style.width = '100vw';
+      appBody.current.style.height = '100vh';
+    } else {
+      appBody.current.style.overflow = '';
+      appBody.current.style.width = '';
+      appBody.current.style.height = '';
     }
-    */
-    return (
-        <div className="App">
-            {/*
-            <Nav modalFlag={modalFlag} getFlag={getFlag}/>
-            {modalFlag === true ? <Modal/> : (null)}
-            */}
-            <Nav/>
-            <Main/>
-            <Footer/>
-        </div>
-    );
+  }, [limitScrollFlag]);
+
+  return (
+    <div className="App" ref={appBody}>
+      <Nav setModalFlag={setModalFlag} />
+      {
+        modalFlag &&
+        <Modal
+          setModalFlag={setModalFlag}
+          setLimitScrollFlag={setLimitScrollFlag}
+        />
+      }
+      <Main />
+      <Footer />
+    </div>
+  );
 }
 export default App;

@@ -1,0 +1,23 @@
+
+
+/************** section8 *****************/
+
+.Section8
+{
+    height: 301.25px;
+}
+
+.Section8 .horizon_wrapper a
+{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 265px;
+    height: 88.5px;
+    text-align: center;
+    
+    font-size: 16px;
+    
+    border: 1px solid #ececec;
+}
