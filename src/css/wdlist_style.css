@@ -1,0 +1,386 @@
+.WdList .horizontal_wrapper {
+  position: relative;
+
+  display: flex;
+  flex-direction: row;
+
+  max-width: 1060px;
+  width: 87.72%;
+}
+
+.WdList .vertical_wrapper {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  max-width: 1060px;
+  width: 87.72%;
+}
+
+
+
+
+/* category */
+
+
+.WdList-category {
+  display: flex;
+  justify-content: center;
+}
+
+.WdList-category .horizontal_wrapper {
+  margin-top: 70px;
+  padding: 20px 0;
+  height: 40px;
+}
+
+.WdList-category .horizontal_wrapper>div {
+  font-size: 24px;
+  line-height: 29px;
+
+  color: rgb(225, 225, 225);
+}
+
+.WdList-category .horizontal_wrapper>div:nth-child(2) {
+  padding: 0 20px;
+  font-weight: 400;
+}
+
+.WdList-category_first {
+  background-color: white;
+  border: 0px;
+
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.WdList-category_first span:last-child {
+  border: 1px solid rgb(225, 225, 225);
+  border-radius: 50%;
+  padding: 0px 8px;
+  margin: 5px;
+}
+
+.WdList-category_second {
+  background-color: white;
+  border: 0px;
+
+  font-size: 24px;
+  font-weight: normal;
+}
+
+.WdList-category_second span:last-child {
+  border: 1px solid rgb(225, 225, 225);
+  border-radius: 50%;
+  padding: 0px 8px;
+  margin: 5px;
+}
+
+.WdList-category button span:last-child:hover {
+  border-color: rgb(51, 51, 51);
+}
+
+
+/*------------ header -----------------*/
+.WdList header {
+  display: flex;
+  justify-content: center;
+}
+
+.WdList header .vertical_wrapper {
+  height: 133px;
+  justify-content: center;
+
+  margin-bottom: 15px;
+}
+
+.WdList header .horizontal_wrapper {
+  width: 100%;
+  justify-content: space-between;
+}
+
+.WdList header .horizontal_wrapper>div {
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.WdList header div.horizontal_wrapper button {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+
+  border: 1px solid rgb(225, 225, 225);
+  border-radius: 5px;
+  padding: 10px 10px;
+
+  cursor: pointer;
+}
+
+.WdList header .horizontal_wrapper>div:first-child button:hover {
+  background-color: rgb(245, 245, 248);
+}
+
+.WdList header .horizontal_wrapper button>div {
+  margin-right: 7px;
+}
+
+.WdList header .horizontal_wrapper button>div:nth-child(1) {
+  margin-right: 7px;
+}
+
+.WdList header .horizontal_wrapper button>div:nth-child(2) {
+  color: #36f;
+  font-weight: 600;
+}
+
+
+.WdList header hr {
+  width: 100%;
+  margin: 25px 0;
+  border: 1px solid rgb(225, 225, 225);
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 0px;
+}
+
+
+
+
+/*------------ scroll- snap -----------------*/
+
+.horizontal_scroll_wrapper {
+  position: relative;
+}
+
+.WdList .scroll_container {
+  display: flex;
+  gap: 8px;
+
+  overflow-x: scroll;
+  -ms-overflow-style: none;
+
+  overscroll-behavior: contain;
+
+  scroll-snap-type: x mandatory;
+}
+
+.WdList .scroll_container::-webkit-scrollbar {
+  display: none;
+}
+
+.WdList .scroll_container button {
+  flex-shrink: 0;
+
+  height: 32px;
+  background-color: rgb(255, 255, 255);
+  padding: 5px 22px;
+  border: 1px solid rgb(225, 225, 225);
+  border-radius: 30px;
+}
+
+.WdList .scroll_container button:hover {
+  border: 1px solid rgba(51, 102, 255, .3);
+}
+
+.WdList .scroll_container img {
+  width: 14px;
+  height: 14px;
+}
+
+.WdList .scroll_prev_btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid rgb(225, 225, 225);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+
+  cursor: pointer;
+}
+
+.WdList .scroll_prev_btn svg {
+  width: 1em;
+  height: 1em;
+  color: #333;
+}
+
+
+.WdList .scroll_nxt_btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  border: 1px solid rgb(225, 225, 225);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+
+  cursor: pointer;
+}
+
+
+.WdList .scroll_nxt_btn svg {
+  width: 1em;
+  height: 1em;
+  color: #333;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*------------ main common --------------*/
+.WdList main {
+  display: flex;
+  justify-content: center;
+  border-top: 1px solid rgb(225, 225, 225);
+
+  padding-top: 30px;
+}
+
+
+
+
+
+
+
+
+/*---- title ------*/
+
+.WdList-main_title div:first-child {
+  padding: 10px 0;
+  color: #36f;
+}
+
+.WdList-main_title div:last-child {
+  padding: 20px 0;
+  font-size: 20px;
+  font-weight: 600;
+  color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+/*---- flex-container ------*/
+
+.WdList-flex_link {
+  max-width: none;
+
+  margin-bottom: 20px;
+}
+
+.WdList-flex_link a {
+  box-sizing: border-box;
+  position: relative;
+  left: 0;
+
+  margin-right: 16px;
+  display: block;
+
+  height: 271px;
+  width: 21.5%;
+
+  border: 1px solid rgb(225, 225, 225);
+  border-radius: 5px;
+}
+
+
+
+.flex_img_wrapper {
+  display: flex;
+  justify-content: center;
+
+
+  height: 55%;
+  overflow: hidden;
+}
+
+.flex_img_wrapper>img {
+  object-fit: cover;
+  transition: all 0.3s;
+}
+
+.WdList-flex_link a:hover div.flex_img_wrapper>img {
+  transition: transform 0.3s linear;
+  transform: scale(1.1);
+}
+
+.logo_wrapper {
+  position: absolute;
+  top: 45%;
+  left: 5%;
+
+  display: flex;
+  justify-content: center;
+
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+
+  background-color: white;
+  border: 1px solid rgb(225, 225, 225)
+}
+
+.flex_body {
+  padding: 20% 10%;
+  overflow: hidden;
+  line-height: 1.4;
+}
+
+
+.flex_body h5 {
+  color: #aaa;
+  font-size: 14px;
+}
+
+
+
+
+
+
+
+
+
+
+/*---- grid-container ------*/
+
+
+.WdList .grid_container {
+  display: grid;
+  grid-template-columns: repeat(4, 250px);
+  grid-template-rows: repeat(2, 343.7px);
+  row-gap: 50px;
+  column-gap: 20px;
+
+  margin-top: 20px;
+}
+

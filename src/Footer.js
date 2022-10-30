@@ -1,4 +1,5 @@
 import './css/footer_style.css';
+import {Link} from 'react-router-dom';
 
 const Footer = () => {
   return (
@@ -15,30 +16,30 @@ const Footer = () => {
             <div>고객센터</div>
           </div>
           <div>
-            <a href="https://www.instagram.com/wantedjobs.kr/">
+            <Link to="https://www.instagram.com/wantedjobs.kr/">
               <img src="https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fuserweb%2Fsocial_instagram.png&w=20&q=100" alt="" />
-            </a>
-            <a href="https://www.youtube.com/channel/UC0tGZ6MqieGG2m5lA5PeQsw">
+            </Link>
+            <Link to="https://www.youtube.com/channel/UC0tGZ6MqieGG2m5lA5PeQsw">
               <img src="https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fuserweb%2Fsocial_youtube.png&w=25&q=100" alt="" />
-            </a>
-            <a href="https://www.facebook.com/wantedkr">
+            </Link>
+            <Link to="https://www.facebook.com/wantedkr">
               <img src="https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fuserweb%2Fsocial_facebook.png&w=20&q=100" alt="" />
-            </a>
-            <a href="https://blog.naver.com/wantedlab">
+            </Link>
+            <Link to="https://blog.naver.com/wantedlab">
               <img src="https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fuserweb%2Fsocial_blog.png&w=20&q=100" alt="" />
-            </a>
-            <a href="https://pf.kakao.com/_XqCIxl">
+            </Link>
+            <Link to="https://pf.kakao.com/_XqCIxl">
               <img src="https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fuserweb%2Fsocial_kakao.png&w=19&q=100" alt="" />
-            </a>
-            <a href="https://post.naver.com/my.nhn?memberNo=18284175">
+            </Link>
+            <Link to="https://post.naver.com/my.nhn?memberNo=18284175">
               <img src="https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fuserweb%2Fsocial_post.png&w=20&q=100" alt="" />
-            </a>
-            <a href="https://apps.apple.com/kr/app/id1074569961">
+            </Link>
+            <Link to="https://apps.apple.com/kr/app/id1074569961">
               <img src="https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fuserweb%2Fsocial_apple.png&w=17&q=100" alt="" />
-            </a>
-            <a href="https://play.google.com/store/apps/details?id=com.wanted.android.wanted">
+            </Link>
+            <Link to="https://play.google.com/store/apps/details?id=com.wanted.android.wanted">
               <img src="https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fuserweb%2Fsocial_google.png&w=17&q=100" alt="" />
-            </a>
+            </Link>
           </div>
         </div>
         <div className="footer_content_wrapper footer_second">

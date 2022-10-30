@@ -1,10 +1,13 @@
 import './css/css_reset.css';
 
 import { useEffect, useState, useRef } from 'react';
+import  { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Nav from './Nav';
 import Main from './Main';
 import Footer from './Footer';
 import Modal from './modal/Modal';
+import WdList from './WdList';
+import Wd from './Wd';
 
 function App() {
   const [modalFlag, setModalFlag] = useState(false);
@@ -33,7 +36,11 @@ function App() {
           setLimitScrollFlag={setLimitScrollFlag}
         />
       }
-      <Main />
+      <Routes>
+        <Route path="/" element={<Main/>}/>
+        <Route path="/wdlist" element={<WdList/>}/>
+        <Route path="/wd/*" element={<Wd/>}/>
+      </Routes>
       <Footer />
     </div>
   );

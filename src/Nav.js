@@ -1,4 +1,5 @@
 import './css/nav_style.css';
+import {Link} from 'react-router-dom';
 
 const Nav = ({ setModalFlag }) => {
 
@@ -18,19 +19,19 @@ const Nav = ({ setModalFlag }) => {
             <img src="https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Ficon-menu.png&w=undefined&q=75" alt="❓" />
           </button>
           <div id="home">
-            <a href="https://jin959.github.io/wanted_clone/">
+            <Link to="https://jin959.github.io/wanted_clone/">
               <img src="https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fuserweb%2Flogo_wanted_black.png&w=110&q=100" alt="❓" />
-            </a>
+            </Link>
           </div>
         </div>
         <div className="nav_center">
-          <div><a href="/#none">채용</a></div>
-          <div><a href="/#none">이벤트</a></div>
-          <div><a href="/#none">직군별 연봉</a></div>
-          <div><a href="/#none">이력서</a></div>
-          <div><a href="/#none">커뮤니티</a><em>New</em></div>
-          <div><a href="/#none">프리랜서</a></div>
-          <div><a href="/#none">AI 합격예측</a><em>Beta</em></div>
+          <div><Link to="/#none">채용</Link></div>
+          <div><Link to="/#none">이벤트</Link></div>
+          <div><Link to="/#none">직군별 연봉</Link></div>
+          <div><Link to="/#none">이력서</Link></div>
+          <div><Link to="/#none">커뮤니티</Link><em>New</em></div>
+          <div><Link to="/#none">프리랜서</Link></div>
+          <div><Link to="/#none">AI 합격예측</Link><em>Beta</em></div>
         </div>
         <div className="nav_right">
           <div>
@@ -46,7 +47,7 @@ const Nav = ({ setModalFlag }) => {
           </div>
           <div>|</div>
           <div>
-            <a href="/#none">기업 서비스</a>
+            <Link to="/#none">기업 서비스</Link>
           </div>
         </div>
       </nav>

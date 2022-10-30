@@ -3,7 +3,7 @@ import {Link} from 'react-router-dom';
 
 const MainSection3 = () => {
   return (
-    <section className="section" id="section3">
+    <section className="Section3 section">
       <div className="section_wrapper">
         <div className="section_nav">
           <button>
