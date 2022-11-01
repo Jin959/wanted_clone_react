@@ -12,18 +12,14 @@ const ModalLogin = (props) => {
   } = props;
 
   const isEmailValid = (e) => {    
-    setEmail(e.target.value); 
-    
-    // RFC 5322 형식
-    const emailRegex = /^[-0-9A-Za-z!#$%&'*+/=?^_`{|}~.]+@[-0-9A-Za-z!#$%&'*+/=?^_`{|}~]+[.]{1}[0-9A-Za-z]/;
-    // 안됨:  /^([^<>()[].,;:\s@"]+)@(([^<>()[].,;:\s@"]+.)+[^<>()[].,;:\s@"]{2,})$/
+    setEmail(e.target.value);
+    let validCnt = 0;
 
-    // setEmail(e.target.value); 은 비동기적으로 처리된다.
-    // 따라서 regex.test(email)처럼 state인 smail이 아니라 
-    // regex.test(e.target.value)에 e.target.value를 사용한다.
-    // 만약 useEffect를 사용한다고 했을때 두번째 인자로 [email]을 줘서 email이 바뀔때 마다 실행하도록 한다면
-    // regex.test(email)로 사용할 수 있다.
-    if (emailRegex.test(e.target.value)) setRegistrationAbleFlag(true);
+    for (let i = 0; i < email.length; i++) {
+      if (email[i] === '@') validCnt++;
+    }
+
+    if (validCnt !== 0) setRegistrationAbleFlag(true);
     else setRegistrationAbleFlag(false);
   }
 

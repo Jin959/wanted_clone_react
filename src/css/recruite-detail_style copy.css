@@ -1,4 +1,4 @@
-.Wd {
+.Recruite {
   max-width: 1060px;
   width: 87.72%;
 
@@ -6,14 +6,14 @@
   margin: 0 auto;
 }
 
-.Wd .horizontal_wrapper {
+.Recruite .horizontal_wrapper {
   position: relative;
 
   display: flex;
   flex-direction: row;
 }
 
-.Wd .vertical_wrapper {
+.Recruite .vertical_wrapper {
   position: relative;
   margin: 0 auto;
 }
@@ -219,7 +219,7 @@
 
 /*---- aside-section ------*/
 
-.aside_section {
+.Recruite .aside_section {
   box-sizing: border-box;
   width: 340px;
   border: 1px solid #e1e2e3;
@@ -236,7 +236,7 @@
   color: #333333;
 }
 
-.aside_section .horizontal_wrapper {
+.Recruite .aside_section .horizontal_wrapper {
   position: relative;
 
   margin: 24px 0;
@@ -245,11 +245,11 @@
   font-weight: 600;
 }
 
-.aside_section .horizontal_wrapper div {
+.Recruite .aside_section .horizontal_wrapper div {
   width: 50%;
 }
 
-.aside_section .horizontal_wrapper h4 {
+.Recruite .aside_section .horizontal_wrapper h4 {
   font-size: 13px;
   font-weight: 600;
   color: #999;
@@ -257,7 +257,7 @@
   line-height: 1.2;
 }
 
-.aside_section .horizontal_wrapper button {
+.Recruite .aside_section .horizontal_wrapper button {
   position: absolute;
   top: -50px;
   right: 0px;
@@ -275,11 +275,11 @@
   justify-content: center;
 }
 
-#bookmark_btn {
+.Recruite .bookmark_btn {
   margin-bottom: 10px;
 }
 
-#bookmark_btn button {
+.Recruite .bookmark_btn button {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -299,11 +299,11 @@
   text-align: center;
 }
 
-#bookmark_btn span {
+.Recruite .bookmark_btn span {
   padding-left: 10px;
 }
 
-#apply_btn button {
+.Recruite .apply_btn button {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -323,11 +323,11 @@
   text-align: center;
 }
 
-#reaction {
+.Recruite .reaction {
   margin-top: 24px;
 }
 
-.likey-btn {
+.Recruite .likey-btn {
   font-size: 15px;
   height: 30px;
   border-radius: 15px;
@@ -336,20 +336,20 @@
   padding: 0 15px;
 }
 
-.icon-likey:before {
+.Recruite .icon-likey:before {
   content: "♥";
 }
 
 /*---- grid-section ------*/
 
-.Wd .grid_title {
+.Recruite .grid_title {
   margin: 0 0 20px;
   font-size: 18px;
   font-weight: 600;
   color: #333333;
 }
 
-.Wd .grid_container {
+.Recruite .grid_container {
   flex-shrink: 0;
 
   display: grid;

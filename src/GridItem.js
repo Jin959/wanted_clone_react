@@ -8,7 +8,7 @@ const GridItem = (props) => {
       <div className="grid_img_wrapper">
         <img src={props.imgLink} alt="❌" />
       </div>
-      <div className="grid_body vertical_wrapper">
+      <div className="grid_body">
         <div className='jobname'>{props.jobName}</div>
         <div className='company'>{props.company}</div>
         {
@@ -19,10 +19,10 @@ const GridItem = (props) => {
           )
         }
         <div className='location'>
-          {`${props.location.city}.${props.location.contry}`}
+          {props.location.city}.{props.location.contry}
         </div>
         <div className='bonus'>
-          {`채용보상금 ${parseMoney(props.signingBonus)}원`}
+          채용보상금 {parseMoney(props.signingBonus)}원
         </div>
       </div>
     </Link>

@@ -1,4 +1,4 @@
-.WdList .horizontal_wrapper {
+.RecruiteList .horizontal_wrapper {
   position: relative;
 
   display: flex;
@@ -8,12 +8,9 @@
   width: 87.72%;
 }
 
-.WdList .vertical_wrapper {
+.RecruiteList .vertical_wrapper {
   position: relative;
-
-  display: flex;
-  flex-direction: column;
-
+  
   max-width: 1060px;
   width: 87.72%;
 }
@@ -24,30 +21,30 @@
 /* category */
 
 
-.WdList-category {
+.RecruiteList-category {
   display: flex;
   justify-content: center;
 }
 
-.WdList-category .horizontal_wrapper {
+.RecruiteList-category .horizontal_wrapper {
   margin-top: 70px;
   padding: 20px 0;
   height: 40px;
 }
 
-.WdList-category .horizontal_wrapper>div {
+.RecruiteList-category .horizontal_wrapper>div {
   font-size: 24px;
   line-height: 29px;
 
   color: rgb(225, 225, 225);
 }
 
-.WdList-category .horizontal_wrapper>div:nth-child(2) {
+.RecruiteList-category .horizontal_wrapper>div:nth-child(2) {
   padding: 0 20px;
   font-weight: 400;
 }
 
-.WdList-category_first {
+.RecruiteList-category_first {
   background-color: white;
   border: 0px;
 
@@ -55,14 +52,14 @@
   font-weight: 700;
 }
 
-.WdList-category_first span:last-child {
+.RecruiteList-category_first span:last-child {
   border: 1px solid rgb(225, 225, 225);
   border-radius: 50%;
   padding: 0px 8px;
   margin: 5px;
 }
 
-.WdList-category_second {
+.RecruiteList-category_second {
   background-color: white;
   border: 0px;
 
@@ -70,44 +67,44 @@
   font-weight: normal;
 }
 
-.WdList-category_second span:last-child {
+.RecruiteList-category_second span:last-child {
   border: 1px solid rgb(225, 225, 225);
   border-radius: 50%;
   padding: 0px 8px;
   margin: 5px;
 }
 
-.WdList-category button span:last-child:hover {
+.RecruiteList-category button span:last-child:hover {
   border-color: rgb(51, 51, 51);
 }
 
 
 /*------------ header -----------------*/
-.WdList header {
+.RecruiteList header {
   display: flex;
   justify-content: center;
 }
 
-.WdList header .vertical_wrapper {
+.RecruiteList header .vertical_wrapper {
   height: 133px;
   justify-content: center;
 
   margin-bottom: 15px;
 }
 
-.WdList header .horizontal_wrapper {
+.RecruiteList header .horizontal_wrapper {
   width: 100%;
   justify-content: space-between;
 }
 
-.WdList header .horizontal_wrapper>div {
+.RecruiteList header .horizontal_wrapper>div {
   display: flex;
   flex-direction: row;
   gap: 8px;
   justify-content: space-between;
 }
 
-.WdList header div.horizontal_wrapper button {
+.RecruiteList header div.horizontal_wrapper button {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -121,25 +118,25 @@
   cursor: pointer;
 }
 
-.WdList header .horizontal_wrapper>div:first-child button:hover {
+.RecruiteList header .horizontal_wrapper>div:first-child button:hover {
   background-color: rgb(245, 245, 248);
 }
 
-.WdList header .horizontal_wrapper button>div {
+.RecruiteList header .horizontal_wrapper button>div {
   margin-right: 7px;
 }
 
-.WdList header .horizontal_wrapper button>div:nth-child(1) {
+.RecruiteList header .horizontal_wrapper button>div:nth-child(1) {
   margin-right: 7px;
 }
 
-.WdList header .horizontal_wrapper button>div:nth-child(2) {
+.RecruiteList header .horizontal_wrapper button>div:nth-child(2) {
   color: #36f;
   font-weight: 600;
 }
 
 
-.WdList header hr {
+.RecruiteList header hr {
   width: 100%;
   margin: 25px 0;
   border: 1px solid rgb(225, 225, 225);
@@ -157,7 +154,7 @@
   position: relative;
 }
 
-.WdList .scroll_container {
+.RecruiteList .scroll_container {
   display: flex;
   gap: 8px;
 
@@ -169,11 +166,11 @@
   scroll-snap-type: x mandatory;
 }
 
-.WdList .scroll_container::-webkit-scrollbar {
+.RecruiteList .scroll_container::-webkit-scrollbar {
   display: none;
 }
 
-.WdList .scroll_container button {
+.RecruiteList .scroll_container button {
   flex-shrink: 0;
 
   height: 32px;
@@ -183,16 +180,16 @@
   border-radius: 30px;
 }
 
-.WdList .scroll_container button:hover {
+.RecruiteList .scroll_container button:hover {
   border: 1px solid rgba(51, 102, 255, .3);
 }
 
-.WdList .scroll_container img {
+.RecruiteList .scroll_container img {
   width: 14px;
   height: 14px;
 }
 
-.WdList .scroll_prev_btn {
+.RecruiteList .scroll_prev_btn {
   position: absolute;
   top: 0;
   left: 0;
@@ -209,14 +206,14 @@
   cursor: pointer;
 }
 
-.WdList .scroll_prev_btn svg {
+.RecruiteList .scroll_prev_btn svg {
   width: 1em;
   height: 1em;
   color: #333;
 }
 
 
-.WdList .scroll_nxt_btn {
+.RecruiteList .scroll_nxt_btn {
   position: absolute;
   top: 0;
   right: 0;
@@ -234,7 +231,7 @@
 }
 
 
-.WdList .scroll_nxt_btn svg {
+.RecruiteList .scroll_nxt_btn svg {
   width: 1em;
   height: 1em;
   color: #333;
@@ -251,7 +248,7 @@
 
 
 /*------------ main common --------------*/
-.WdList main {
+.RecruiteList main {
   display: flex;
   justify-content: center;
   border-top: 1px solid rgb(225, 225, 225);
@@ -268,12 +265,12 @@
 
 /*---- title ------*/
 
-.WdList-main_title div:first-child {
+.RecruiteList-main_title div:first-child {
   padding: 10px 0;
   color: #36f;
 }
 
-.WdList-main_title div:last-child {
+.RecruiteList-main_title div:last-child {
   padding: 20px 0;
   font-size: 20px;
   font-weight: 600;
@@ -292,13 +289,13 @@
 
 /*---- flex-container ------*/
 
-.WdList-flex_link {
+.RecruiteList-flex_link {
   max-width: none;
 
   margin-bottom: 20px;
 }
 
-.WdList-flex_link a {
+.RecruiteList-flex_link a {
   box-sizing: border-box;
   position: relative;
   left: 0;
@@ -329,7 +326,7 @@
   transition: all 0.3s;
 }
 
-.WdList-flex_link a:hover div.flex_img_wrapper>img {
+.RecruiteList-flex_link a:hover div.flex_img_wrapper>img {
   transition: transform 0.3s linear;
   transform: scale(1.1);
 }
@@ -374,7 +371,7 @@
 /*---- grid-container ------*/
 
 
-.WdList .grid_container {
+.RecruiteList .grid_container {
   display: grid;
   grid-template-columns: repeat(4, 250px);
   grid-template-rows: repeat(2, 343.7px);

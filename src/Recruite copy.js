@@ -1,49 +1,46 @@
-import './css/wd_style.css';
+import './css/recruite_style.css';
 import { useEffect, useState, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import GridItem from './GridItem';
 import gridData from './json/grid_data.json'
 
-const Wd = () => {
-  const wdAside = useRef();
-  const wdArticle = useRef();   
+const Recruite = () => {
+  const RecruiteAside = useRef();
+  const RecruiteArticle = useRef();
 
   const fixAside = () => {
-    wdAside.current.style.position = 'fixed';
-    wdAside.current.style.top = '70px';
-    wdAside.current.style.bottom = null;
-    wdAside.current.style.right = 'calc((100% - 1060px)/2)';
+    RecruiteAside.current.style.position = 'fixed';
+    RecruiteAside.current.style.top = '70px';
+    RecruiteAside.current.style.bottom = null;
+    RecruiteAside.current.style.right = 'calc((100% - 1060px)/2)';
   };
 
   const absoluteAside = () => {
-    wdAside.current.style.position = 'absolute';
-    wdAside.current.style.top = null;
-    wdAside.current.style.bottom = '0px';
-    wdAside.current.style.right = '0px';
+    RecruiteAside.current.style.position = 'absolute';
+    RecruiteAside.current.style.top = null;
+    RecruiteAside.current.style.bottom = '0px';
+    RecruiteAside.current.style.right = '0px';
   }
 
   const asidePositionHandler = () => {
-    const boundary = wdArticle.current.getBoundingClientRect().bottom + window.scrollY;
+    const boundary = RecruiteArticle.current.getBoundingClientRect().bottom + window.scrollY;
     const y = window.scrollY;
     console.log('bnd : ', boundary);
-    console.log('y : ', window.scrollY );
+    console.log('y : ', window.scrollY);
     if (y >= boundary * 0.9) absoluteAside();
     else fixAside();
   }
 
-  useEffect(() => { 
+  useEffect(() => {
     fixAside();
     window.addEventListener('scroll', asidePositionHandler);
-    return () => {
-      window.removeEventListener('scroll', asidePositionHandler);
-    }
-  },[])
+  }, [])
 
 
   return (
-    <div className="Wd">
+    <div className="Recruite">
       <div className="article_wrapper">
-        <div className="article_section" ref={wdArticle}>
+        <div className="article_section" ref={RecruiteArticle}>
           <div className="img_frame">
             <button>
               <svg viewBox="0 0 18 18">
@@ -298,7 +295,7 @@ const Wd = () => {
           <div id="article_company"></div>
           <div id="article_warning"></div>
         </div>
-        <div className="aside_section" ref={wdAside}>
+        <div className="aside_section" ref={RecruiteAside}>
           <h3>채용보상금</h3>
           <div className="horizontal_wrapper">
             <div>
@@ -323,7 +320,7 @@ const Wd = () => {
               </svg>
             </button>
           </div>
-          <div id="bookmark_btn">
+          <div className="bookmark_btn">
             <button>
               <svg width="13" height="17" viewBox="0 0 13 17" style={{ color: 'rgb(51, 102, 255)' }}>
                 <defs>
@@ -338,12 +335,12 @@ const Wd = () => {
               <span>북마크하기</span>
             </button>
           </div>
-          <div id="apply_btn">
+          <div className="apply_btn">
             <button>
               지원하기
             </button>
           </div>
-          <div id="reaction">
+          <div className="reaction">
             <button className="likey-btn">
               <i className="icon-likey"></i>
               <span>9</span>
@@ -355,21 +352,23 @@ const Wd = () => {
 
       <h5 className="grid_title">이 포지션을 찾고 계셨나요?</h5>
       <div className="grid_container">
-      {gridData.jobs.map((ele) => {
-        return <GridItem
-          key={ele.id}
-          id={ele.id}
-          imgLink={ele.imgLink}
-          jobName={ele.jobName}
-          company={ele.company}
-          responseFlag={ele.responseFlag}
-          location={ele.location}
-          signingBonus={ele.signingBonus}
-        />
-      })}
+        {
+          gridData.jobs.map( ele => {
+            return <GridItem
+              key={ele.id}
+              id={ele.id}
+              imgLink={ele.imgLink}
+              jobName={ele.jobName}
+              company={ele.company}
+              responseFlag={ele.responseFlag}
+              location={ele.location}
+              signingBonus={ele.signingBonus}
+            />
+          })
+        }
       </div>
     </div>
   )
 }
 
-export default Wd
+export default Recruite

@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 const Nav = ({ setModalFlag }) => {
 
   const onClickModal = () => {
-    setModalFlag(true);    
+    setModalFlag(true);
   }
 
   const onPointerDropDownMenu = () => {
@@ -19,7 +19,7 @@ const Nav = ({ setModalFlag }) => {
             <img src="https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Ficon-menu.png&w=undefined&q=75" alt="❓" />
           </button>
           <div id="home">
-            <Link to="https://jin959.github.io/wanted_clone/">
+            <Link to="/">
               <img src="https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fuserweb%2Flogo_wanted_black.png&w=110&q=100" alt="❓" />
             </Link>
           </div>

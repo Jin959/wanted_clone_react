@@ -1,23 +1,23 @@
-import './css/wdlist_style.css';
+import './css/recruite-list_style.css';
 import { ReactComponent as BookMarkIcon } from "./assets/BookMarkIcon.svg";
 import { Link } from 'react-router-dom';
 import GridItem from './GridItem';
 import gridData from './json/grid_data.json'
 
-const WdList = () => {
+const RecruiteList = () => {
   return (
-    <div className='WdList'>
-      <div className="WdList-category">
+    <div className='RecruiteList'>
+      <div className="RecruiteList-category">
         <div className="horizontal_wrapper">
           <div>
-            <button className="WdList-category_first">
+            <button className="RecruiteList-category_first">
               <span>개발</span>
               <span><svg xmlns="https://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="#767676" fillRule="nonzero" d="M2.28 3.22a.75.75 0 0 0-1.06 1.06l4.25 4.25a.75.75 0 0 0 1.06 0l4.25-4.25a.75.75 0 0 0-1.06-1.06L6 6.94 2.28 3.22z"></path></svg></span>
             </button>
           </div>
           <div>|</div>
           <div>
-            <button className="WdList-category_second">
+            <button className="RecruiteList-category_second">
               <span>개발 전체</span>
               <span><svg xmlns="https://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 12 12"><path fill="#767676" fillRule="nonzero" d="M2.28 3.22a.75.75 0 0 0-1.06 1.06l4.25 4.25a.75.75 0 0 0 1.06 0l4.25-4.25a.75.75 0 0 0-1.06-1.06L6 6.94 2.28 3.22z"></path></svg></span>
             </button>
@@ -115,7 +115,7 @@ const WdList = () => {
       </header>
       <main>
         <div className="vertical_wrapper">
-          <div className="WdList-main_title">
+          <div className="RecruiteList-main_title">
             <div>
               <BookMarkIcon />
               북마크 모아보기
@@ -125,7 +125,7 @@ const WdList = () => {
               적극 채용 중인 회사
             </div>
           </div>
-          <div className="WdList-flex_link horizontal_wrapper">
+          <div className="RecruiteList-flex_link horizontal_wrapper">
             <Link to="#none">
               <div className="flex_img_wrapper">
                 <img src="https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fcompany%2F23165%2Fivihugmapkafh5ao__400_400.jpg&w=400&q=75" alt="❌" />
@@ -188,18 +188,20 @@ const WdList = () => {
             </Link>
           </div>
           <div className="grid_container">
-          {gridData.jobs.map((ele) => {
-            return <GridItem
-              key={ele.id}
-              id={ele.id}
-              imgLink={ele.imgLink}
-              jobName={ele.jobName}
-              company={ele.company}
-              responseFlag={ele.responseFlag}
-              location={ele.location}
-              signingBonus={ele.signingBonus}
-            />
-          })}
+            {
+              gridData.jobs.map((ele) => {
+                return <GridItem
+                  key={ele.id}
+                  id={ele.id}
+                  imgLink={ele.imgLink}
+                  jobName={ele.jobName}
+                  company={ele.company}
+                  responseFlag={ele.responseFlag}
+                  location={ele.location}
+                  signingBonus={ele.signingBonus}
+                />
+              })
+            }
           </div>
         </div>
       </main>
@@ -207,4 +209,4 @@ const WdList = () => {
   )
 }
 
-export default WdList
+export default RecruiteList

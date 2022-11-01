@@ -2,12 +2,12 @@ import './css/css_reset.css';
 
 import { useEffect, useState, useRef } from 'react';
 import  { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Nav from './Nav';
+import Navigation from './Navigation';
 import Main from './Main';
 import Footer from './Footer';
 import Modal from './modal/Modal';
-import WdList from './WdList';
-import Wd from './Wd';
+import RecruiteDetail from './RecruiteDetail';
+import RecruiteList from './RecruiteList';
 
 function App() {
   const [modalFlag, setModalFlag] = useState(false);
@@ -28,7 +28,7 @@ function App() {
 
   return (
     <div className="App" ref={appBody}>
-      <Nav setModalFlag={setModalFlag} />
+      <Navigation setModalFlag={setModalFlag} />
       {
         modalFlag &&
         <Modal
@@ -38,8 +38,8 @@ function App() {
       }
       <Routes>
         <Route path="/" element={<Main/>}/>
-        <Route path="/wdlist" element={<WdList/>}/>
-        <Route path="/wd/*" element={<Wd/>}/>
+        <Route path="/wdlist" element={<RecruiteList/>}/>
+        <Route path="/wd/*" element={<RecruiteDetail/>}/>
       </Routes>
       <Footer />
     </div>
