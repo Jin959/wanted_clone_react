@@ -1,244 +1,80 @@
-.RecruiteList .horizontal_wrapper {
-  position: relative;
-
-  display: flex;
-  flex-direction: row;
-
-  max-width: 1060px;
-  width: 87.72%;
-}
-
-.RecruiteList .vertical_wrapper {
-  position: relative;
-  
-  max-width: 1060px;
-  width: 87.72%;
-}
 
 
 
-
-/* category */
+/*-------------- category ---------------*/
 
 
 .RecruiteList-category {
   display: flex;
   justify-content: center;
+  padding-bottom: 10px;
 }
 
-.RecruiteList-category .horizontal_wrapper {
+.RecruiteList-category .category_wrapper {
+  display: flex;
+  flex-direction: row;
+
+  max-width: 1060px;
+  width: 87.72%;
+
   margin-top: 70px;
   padding: 20px 0;
   height: 40px;
 }
 
-.RecruiteList-category .horizontal_wrapper>div {
+
+.RecruiteList-category .category_wrapper>div {
   font-size: 24px;
   line-height: 29px;
-
+  
   color: rgb(225, 225, 225);
 }
 
-.RecruiteList-category .horizontal_wrapper>div:nth-child(2) {
+.RecruiteList-category .category_wrapper>div:nth-child(2) {
   padding: 0 20px;
   font-weight: 400;
 }
 
-.RecruiteList-category_first {
+.RecruiteList-category_first_btn {
   background-color: white;
   border: 0px;
 
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 700;
 }
 
-.RecruiteList-category_first span:last-child {
-  border: 1px solid rgb(225, 225, 225);
-  border-radius: 50%;
-  padding: 0px 8px;
-  margin: 5px;
-}
-
-.RecruiteList-category_second {
+.RecruiteList-category_second_btn {
   background-color: white;
   border: 0px;
 
-  font-size: 24px;
+  font-size: 22px;
   font-weight: normal;
 }
 
-.RecruiteList-category_second span:last-child {
-  border: 1px solid rgb(225, 225, 225);
-  border-radius: 50%;
-  padding: 0px 8px;
-  margin: 5px;
+.RecruiteList-category span {
+  vertical-align: middle;
+} 
+
+.RecruiteList-category span:first-child {
+  margin-right: 20px;
 }
 
-.RecruiteList-category button span:last-child:hover {
+.RecruiteList-category span:last-child {
+  display: inline-block;
+  width: 22px;
+  height: 22px;
+  
+  border: 1px solid rgb(225, 225, 225);
+  border-radius: 50%;
+}
+
+.RecruiteList-category span:last-child:hover {
   border-color: rgb(51, 51, 51);
 }
 
-
-/*------------ header -----------------*/
-.RecruiteList header {
-  display: flex;
-  justify-content: center;
+.RecruiteList-category svg {
+  margin-bottom: 5px;
 }
-
-.RecruiteList header .vertical_wrapper {
-  height: 133px;
-  justify-content: center;
-
-  margin-bottom: 15px;
-}
-
-.RecruiteList header .horizontal_wrapper {
-  width: 100%;
-  justify-content: space-between;
-}
-
-.RecruiteList header .horizontal_wrapper>div {
-  display: flex;
-  flex-direction: row;
-  gap: 8px;
-  justify-content: space-between;
-}
-
-.RecruiteList header div.horizontal_wrapper button {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  gap: 5px;
-
-  border: 1px solid rgb(225, 225, 225);
-  border-radius: 5px;
-  padding: 10px 10px;
-
-  cursor: pointer;
-}
-
-.RecruiteList header .horizontal_wrapper>div:first-child button:hover {
-  background-color: rgb(245, 245, 248);
-}
-
-.RecruiteList header .horizontal_wrapper button>div {
-  margin-right: 7px;
-}
-
-.RecruiteList header .horizontal_wrapper button>div:nth-child(1) {
-  margin-right: 7px;
-}
-
-.RecruiteList header .horizontal_wrapper button>div:nth-child(2) {
-  color: #36f;
-  font-weight: 600;
-}
-
-
-.RecruiteList header hr {
-  width: 100%;
-  margin: 25px 0;
-  border: 1px solid rgb(225, 225, 225);
-  border-left: 0px;
-  border-right: 0px;
-  border-bottom: 0px;
-}
-
-
-
-
-/*------------ scroll- snap -----------------*/
-
-.horizontal_scroll_wrapper {
-  position: relative;
-}
-
-.RecruiteList .scroll_container {
-  display: flex;
-  gap: 8px;
-
-  overflow-x: scroll;
-  -ms-overflow-style: none;
-
-  overscroll-behavior: contain;
-
-  scroll-snap-type: x mandatory;
-}
-
-.RecruiteList .scroll_container::-webkit-scrollbar {
-  display: none;
-}
-
-.RecruiteList .scroll_container button {
-  flex-shrink: 0;
-
-  height: 32px;
-  background-color: rgb(255, 255, 255);
-  padding: 5px 22px;
-  border: 1px solid rgb(225, 225, 225);
-  border-radius: 30px;
-}
-
-.RecruiteList .scroll_container button:hover {
-  border: 1px solid rgba(51, 102, 255, .3);
-}
-
-.RecruiteList .scroll_container img {
-  width: 14px;
-  height: 14px;
-}
-
-.RecruiteList .scroll_prev_btn {
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  border: 1px solid rgb(225, 225, 225);
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-
-  cursor: pointer;
-}
-
-.RecruiteList .scroll_prev_btn svg {
-  width: 1em;
-  height: 1em;
-  color: #333;
-}
-
-
-.RecruiteList .scroll_nxt_btn {
-  position: absolute;
-  top: 0;
-  right: 0;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  border: 1px solid rgb(225, 225, 225);
-  border-radius: 50%;
-  width: 30px;
-  height: 30px;
-
-  cursor: pointer;
-}
-
-
-.RecruiteList .scroll_nxt_btn svg {
-  width: 1em;
-  height: 1em;
-  color: #333;
-}
-
-
-
 
 
 
@@ -248,12 +84,16 @@
 
 
 /*------------ main common --------------*/
-.RecruiteList main {
-  display: flex;
-  justify-content: center;
-  border-top: 1px solid rgb(225, 225, 225);
 
+.RecruiteList main {  
+  border-top: 1px solid rgb(225, 225, 225);
   padding-top: 30px;
+}
+
+.RecruteList-main_wrapper {
+  margin: 0 auto;
+  max-width: 1060px;
+  width: 87.72%;
 }
 
 
@@ -261,9 +101,7 @@
 
 
 
-
-
-/*---- title ------*/
+/*---- main_title ------*/
 
 .RecruiteList-main_title div:first-child {
   padding: 10px 0;
@@ -290,9 +128,13 @@
 /*---- flex-container ------*/
 
 .RecruiteList-flex_link {
-  max-width: none;
+  display: flex;
+  flex-direction: row;
 
-  margin-bottom: 20px;
+  max-width: 1060px;
+  width: 87.72%;
+
+  padding-bottom: 20px;
 }
 
 .RecruiteList-flex_link a {
@@ -312,7 +154,7 @@
 
 
 
-.flex_img_wrapper {
+.RecruiteList-flex_link .flex_img_wrapper {
   display: flex;
   justify-content: center;
 
@@ -321,7 +163,7 @@
   overflow: hidden;
 }
 
-.flex_img_wrapper>img {
+.RecruiteList-flex_link .flex_img_wrapper>img {
   object-fit: cover;
   transition: all 0.3s;
 }
@@ -331,7 +173,7 @@
   transform: scale(1.1);
 }
 
-.logo_wrapper {
+.RecruiteList-flex_link .logo_wrapper {
   position: absolute;
   top: 45%;
   left: 5%;
@@ -347,14 +189,14 @@
   border: 1px solid rgb(225, 225, 225)
 }
 
-.flex_body {
+.RecruiteList-flex_link .flex_body {
   padding: 20% 10%;
   overflow: hidden;
   line-height: 1.4;
 }
 
 
-.flex_body h5 {
+.RecruiteList-flex_link .flex_body h5 {
   color: #aaa;
   font-size: 14px;
 }
@@ -373,11 +215,13 @@
 
 .RecruiteList .grid_container {
   display: grid;
-  grid-template-columns: repeat(4, 250px);
-  grid-template-rows: repeat(2, 343.7px);
-  row-gap: 50px;
-  column-gap: 20px;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-template-rows: repeat(auto-fill, minmax(347px, 1fr));
+  row-gap: 15px;
+  column-gap: 15px;
+
+  justify-content: center;
+  align-content: start;
 
   margin-top: 20px;
 }
-

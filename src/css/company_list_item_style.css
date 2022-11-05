@@ -1,0 +1,70 @@
+.CompanyListItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  width: calc(50% - 10px);
+  margin: 5px;
+  padding: 20px;
+
+  border-radius: 2px;
+
+  background-color: white;
+}
+
+
+
+.CompanyListItem-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+.CompanyListItem .logo_wrapper {
+  width: 58px;
+  height: 58px;
+  margin-right: 20px;
+
+  display: flex;
+  justify-content: center;
+  overflow: hidden;
+  
+  border: 0;
+}
+
+.CompanyListItem .logo_wrapper>img {
+  object-fit: cover;
+}
+
+.CompanyListItem .company_info {
+  height: 58px;
+}
+
+.CompanyListItem h5 {
+  color: #333;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 27px;
+  margin-bottom: 4px;
+}
+
+.CompanyListItem h6 {
+  color: #999;
+  font-weight: 400;
+  line-height: 20px;
+}
+
+
+.CompanyListItem .follow_btn {
+  height: 40px;
+  font-size: 15px;
+  color: #36f;
+  border: 1px solid #e1e2e3;
+  padding: 0 27px;
+  border-radius: 20px;
+}
+
+.CompanyListItem .follow_btn:hover{
+  border: 1px solid #36f;
+}

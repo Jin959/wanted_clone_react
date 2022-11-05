@@ -1,4 +1,4 @@
-import './css/MainSection1.css';
+import './css/main_section1.css';
 /*MainSection1 === top_banner*/
 const MainSection1 = () => {
   return (

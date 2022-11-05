@@ -1,4 +1,4 @@
-import './css/MainSection7.css';
+import './css/main_section7.css';
 import { Link } from 'react-router-dom';
 import { ReactComponent as CheckIcon } from "../assets/CheckIcon.svg";
 

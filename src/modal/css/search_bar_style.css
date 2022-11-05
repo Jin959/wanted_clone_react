@@ -1,0 +1,89 @@
+.SearchBar-background {
+  position: fixed;
+  backdrop-filter: brightness(60%);
+  width: 100vw;
+  height: 100vh;
+  z-index: 200;
+}
+
+.SearchBar {
+  position: fixed;
+  background-color: white;
+  width: 100%;
+}
+
+.SearchBar-wrapper {
+  width: 100%;
+  max-width: 1060px;
+  margin: 0 auto;
+  padding-top: 30px;
+  
+}
+
+.SearchBar-form {
+  position: relative;  
+  font-size: 16px;
+  font-weight: 400;  
+  border-radius: 25px;
+}
+
+.SearchBar-input {
+  height: 50px;
+  width: 100%;
+  box-sizing: border-box;
+  padding-left: 60px;
+  padding-right: 36px;
+  border: 0;
+  border-radius: 25px;
+  background-color: #f2f4f7;  
+}
+
+.SearchBar-input:focus {
+  background-color: white;
+  outline: 1px solid #3366ff;
+}
+
+.SearchBar-form svg {  
+  position: absolute;
+  top: 16px;
+  left: 22px;
+}
+
+.SearchBar-recomend_tag {
+  padding: 0px;
+  padding-top: 50px;
+}
+
+.SearchBar-wrapper h4 {
+  display: inline-block;
+}
+
+.SearchBar-wrapper a {
+  float: right;
+  color: #767676;  
+  font-weight: 400;
+}
+
+.SearchBar-wrapper ul {
+  padding-top: 20px;
+  padding-bottom: 100px;
+}
+
+.SearchBar-wrapper li {
+  float: left;
+  
+}
+
+.SearchBar-wrapper li button {
+  background: #f0f8f8;
+  height: 50px;
+  line-height: 50px;
+  font-size: 15px;
+  font-weight: 400;
+  color: #333;
+
+  margin-left: 10px;
+  margin-bottom: 10px;
+  border-radius: 25px;
+  padding: 0 26px;
+}

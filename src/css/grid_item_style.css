@@ -14,7 +14,7 @@
 
 .GridItem {
   display: block;
-  width: 250px;
+  
 
   color: #aaa;
 }
@@ -23,9 +23,10 @@
   display: flex;
   justify-content: center;
 
-  width: 250px;
+  
   height: 187.5px;
   border-radius: 5px;
+  border: 1px solid #e3e3e3;
   overflow: hidden;
 
   margin-bottom: 15px;
@@ -37,14 +38,13 @@
 
 
 .GridItem .grid_body {
-  width: 250px;
-  height: 357px;
+  
   font-size: 13px;
   overflow: hidden;
 }
 
 .GridItem .jobname {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: 600;
   line-height: 1.2;
   color: rgb(3, 3, 3);

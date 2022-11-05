@@ -1,12 +1,16 @@
-import './css/nav_style.css';
+import './css/navigation_bar_style.css';
+import { ReactComponent as SearchIcon } from "./assets/SearchIcon.svg";
 import {Link} from 'react-router-dom';
 
-const Nav = ({ setModalFlag }) => {
-
+const NavigationBar = ({ setModalFlag, setSearchBarFlag }) => {
   const onClickModal = () => {
     setModalFlag(true);
   }
 
+  const onClickSearchBtn = () => {
+    setSearchBarFlag(true);
+  }
+  
   const onPointerDropDownMenu = () => {
     window.alert('onpointerenter');
   }
@@ -35,11 +39,8 @@ const Nav = ({ setModalFlag }) => {
         </div>
         <div className="nav_right">
           <div>
-            <button>
-              <svg xmlns="https://www.w3.org/2000/svg" width="18" height="18">
-                <path d="M15.727 17.273a.563.563 0 10.796-.796l-4.875-4.875-.19-.165a.563.563 0 00-.764.028 5.063 5.063 0 111.261-2.068.562.562 0 101.073.338 6.188 6.188 0 10-1.943 2.894l4.642 4.644z">
-                </path>
-              </svg>
+            <button onClick={onClickSearchBtn}>
+              <SearchIcon/>
             </button>
           </div>
           <div>
@@ -55,4 +56,4 @@ const Nav = ({ setModalFlag }) => {
   )
 }
 
-export default Nav;
+export default NavigationBar;

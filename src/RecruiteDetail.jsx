@@ -1,46 +1,13 @@
-import './css/recruite_style.css';
-import { useEffect, useState, useRef } from 'react';
+import './css/recruite-detail_style.css';
 import { Link } from 'react-router-dom';
 import GridItem from './GridItem';
-import gridData from './json/grid_data.json'
+import gridData from './json/job_data.json'
 
-const Recruite = () => {
-  const RecruiteAside = useRef();
-  const RecruiteArticle = useRef();
-
-  const fixAside = () => {
-    RecruiteAside.current.style.position = 'fixed';
-    RecruiteAside.current.style.top = '70px';
-    RecruiteAside.current.style.bottom = null;
-    RecruiteAside.current.style.right = 'calc((100% - 1060px)/2)';
-  };
-
-  const absoluteAside = () => {
-    RecruiteAside.current.style.position = 'absolute';
-    RecruiteAside.current.style.top = null;
-    RecruiteAside.current.style.bottom = '0px';
-    RecruiteAside.current.style.right = '0px';
-  }
-
-  const asidePositionHandler = () => {
-    const boundary = RecruiteArticle.current.getBoundingClientRect().bottom + window.scrollY;
-    const y = window.scrollY;
-    console.log('bnd : ', boundary);
-    console.log('y : ', window.scrollY);
-    if (y >= boundary * 0.9) absoluteAside();
-    else fixAside();
-  }
-
-  useEffect(() => {
-    fixAside();
-    window.addEventListener('scroll', asidePositionHandler);
-  }, [])
-
-
+const RecruiteDetail = () => {  
   return (
-    <div className="Recruite">
+    <div className="RecruiteDetail">
       <div className="article_wrapper">
-        <div className="article_section" ref={RecruiteArticle}>
+        <div className="article_section">
           <div className="img_frame">
             <button>
               <svg viewBox="0 0 18 18">
@@ -56,7 +23,7 @@ const Recruite = () => {
                 </path>
               </svg>
             </button>
-            <div id="article_img">
+            <div className="article_img">
               <div className="img_wrapper">
                 <img
                   src="https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fcompany%2F22333%2Feh1mycy7nnltf5ah__1080_790.jpg&w=1000&q=75"
@@ -74,7 +41,7 @@ const Recruite = () => {
               </div>
             </div>
           </div>
-          <div id="article_header">
+          <div className="article_header">
             <h2>웹 프론트엔드 개발자(React)</h2>
             <div className="job_info">
               <span>블루비커</span>
@@ -98,7 +65,7 @@ const Recruite = () => {
               </ul>
             </div>
           </div>
-          <div id="article_explain">
+          <div className="article_explain">
             <p>
               <span>
                 ＜서비스 소개＞<br /><br />
@@ -280,8 +247,8 @@ const Recruite = () => {
                 ✓ 블루비커에 관심을 갖고 지원해 주신 모든 분들의 서류를 정말 감사한 마음으로 읽어 보고 있습니다. 채용의 모든 전형에서 가능한 빠른 피드백을 드리고자 노력하겠습니다.
               </span>
             </p>
-            <h6 id="skillset_title">기술스택 ・ 툴</h6>
-            <div id="skillset_container">
+            <h6 className="skillset_title">기술스택 ・ 툴</h6>
+            <div className="skillset_container">
               <div className="skill_item">Git</div>
               <div className="skill_item">Azure</div>
               <div className="skill_item">React</div>
@@ -292,12 +259,13 @@ const Recruite = () => {
             </div>
           </div>
 
-          <div id="article_company"></div>
-          <div id="article_warning"></div>
+          <div className="article_company"></div>
+          <div className="article_warning"></div>
         </div>
-        <div className="aside_section" ref={RecruiteAside}>
+
+        <div className="aside_section">
           <h3>채용보상금</h3>
-          <div className="horizontal_wrapper">
+          <div className="bonus_wrapper">
             <div>
               <h4>추천인</h4>
               <div>500,000원</div>
@@ -349,7 +317,6 @@ const Recruite = () => {
         </div>
       </div>
 
-
       <h5 className="grid_title">이 포지션을 찾고 계셨나요?</h5>
       <div className="grid_container">
         {
@@ -371,4 +338,4 @@ const Recruite = () => {
   )
 }
 
-export default Recruite
+export default RecruiteDetail

@@ -1,18 +1,22 @@
 import './css/css_reset.css';
-
 import { useEffect, useState, useRef } from 'react';
-import  { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Navigation from './Navigation';
+import  { Routes, Route } from 'react-router-dom';
+import NavigationBar from './NavigationBar';
 import Main from './Main';
 import Footer from './Footer';
 import Modal from './modal/Modal';
+import SearchBar from './modal/SearchBar';
 import RecruiteDetail from './RecruiteDetail';
 import RecruiteList from './RecruiteList';
+import Search from './Search';
 
 function App() {
   const [modalFlag, setModalFlag] = useState(false);
   const [limitScrollFlag, setLimitScrollFlag] = useState(false);
+  const [searchBarFlag, setSearchBarFlag] = useState(false);
   const appBody = useRef();
+
+  
 
   useEffect(() => {
     if (limitScrollFlag) {
@@ -28,7 +32,10 @@ function App() {
 
   return (
     <div className="App" ref={appBody}>
-      <Navigation setModalFlag={setModalFlag} />
+      <NavigationBar
+        setModalFlag={setModalFlag}
+        setSearchBarFlag={setSearchBarFlag}
+      />
       {
         modalFlag &&
         <Modal
@@ -36,10 +43,18 @@ function App() {
           setLimitScrollFlag={setLimitScrollFlag}
         />
       }
+      {
+        searchBarFlag &&
+        <SearchBar
+          searchBarFlag={searchBarFlag}
+          setSearchBarFlag={setSearchBarFlag}
+        />
+      }
       <Routes>
         <Route path="/" element={<Main/>}/>
         <Route path="/wdlist" element={<RecruiteList/>}/>
         <Route path="/wd/*" element={<RecruiteDetail/>}/>
+        <Route path="/search" element={<Search/>}/>
       </Routes>
       <Footer />
     </div>

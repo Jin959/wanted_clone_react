@@ -143,35 +143,7 @@
   column-gap: 20px;
 }
 
-.Section2 .grid_container a {
-  display: block;
-  width: 250px;
-  height: 308px;
-  color: #aaa;
-}
 
-.grid_author {
-  display: flex;
-  align-items: center;
-
-  width: 250px;
-  height: 30px;
-  padding: 20px 0px;
-  font-size: 13px;
-  overflow: hidden;
-}
-
-.grid_author p {
-  margin-left: 10px;
-  letter-spacing: -1px;
-}
-
-.grid_author img {
-  width: 28px;
-  height: 28px;
-  border: 1px solid rgb(225, 225, 225);
-  border-radius: 50%;
-}
 
 .section2_more_btn {
 

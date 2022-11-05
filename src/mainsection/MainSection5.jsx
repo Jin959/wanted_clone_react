@@ -1,4 +1,4 @@
-import './css/MainSection5.css';
+import './css/main_section5.css';
 import {Link} from 'react-router-dom';
 
 const MainSection5 = () => {

@@ -16,7 +16,9 @@
       "company": "로아스",
       "responseFlag": true,
       "location": {"contry": "한국", "city": "경기"},
-      "signingBonus": 1000000
+      "signingBonus": 1000000,
+      "logoLink": "https://static.wanted.co.kr/images/wdes/0_5.689149bc.jpg",
+      "biz": ["IT", "컨텐츠"]
     },
     {
       "id": 2,
@@ -25,7 +27,9 @@
       "company": "로아스",
       "responseFlag": true,
       "location": {"contry": "한국", "city": "경기"},
-      "signingBonus": 1000000
+      "signingBonus": 1000000,
+      "logoLink": "https://static.wanted.co.kr/images/wdes/0_5.689149bc.jpg",
+      "biz": ["IT", "컨텐츠"]
     },
     {
       "id": 3,
@@ -34,7 +38,9 @@
       "company": "로아스",
       "responseFlag": true,
       "location": {"contry": "한국", "city": "경기" },
-      "signingBonus": 1000000
+      "signingBonus": 1000000,
+      "logoLink": "https://static.wanted.co.kr/images/wdes/0_5.689149bc.jpg",
+      "biz": ["IT", "컨텐츠"]
     },
     {
       "id": 4,
@@ -43,7 +49,9 @@
       "company": "디무브",
       "responseFlag": true,
       "location": {"contry": "한국", "city": "서울"},
-      "signingBonus": 1000000
+      "signingBonus": 1000000,
+      "logoLink": "https://static.wanted.co.kr/images/wdes/0_5.15dcba79.jpg",
+      "biz": ["IT", "컨텐츠"]
     }, 
     {
       "id": 5,
@@ -52,7 +60,9 @@
       "company": "파인디지털",
       "responseFlag": true,
       "location": {"contry": "한국", "city": "경기"},
-      "signingBonus": 1000000
+      "signingBonus": 1000000,
+      "logoLink": "https://static.wanted.co.kr/images/wdes/0_5.3be8f58f.jpg",
+      "biz": ["제조"]
     },
     {
       "id": 6,
@@ -61,7 +71,9 @@
       "company": "파인디지털",
       "responseFlag": true,
       "location": {"contry": "한국", "city": "경기"},
-      "signingBonus": 1000000
+      "signingBonus": 1000000,
+      "logoLink": "https://static.wanted.co.kr/images/wdes/0_5.3be8f58f.jpg",
+      "biz": ["제조"]
     },
     {
       "id": 7,
@@ -70,7 +82,29 @@
       "company": "레인보우로보틱스",
       "responseFlag": true,
       "location": {"contry": "한국", "city": "대전"},
-      "signingBonus": 1000000
+      "signingBonus": 1000000,
+      "logoLink": "https://static.wanted.co.kr/images/wdes/0_5.10804456.jpg",
+      "biz": ["제조"]
+    },
+    {
+      "id": 8,
+      "imgLink": "https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fcompany%2F22333%2Feh1mycy7nnltf5ah__400_400.jpg&w=400&q=75",
+      "jobName": "3D 아티스트(모델링)",
+      "company": "블루비커",
+      "location": {"contry": "한국", "city": "서울"},
+      "signingBonus": 1000000,
+      "logoLink": "https://static.wanted.co.kr/images/wdes/0_5.0852ff23.jpg",
+      "biz": ["IT", "컨텐츠"]
+    },
+    {
+      "id": 9,
+      "imgLink": "https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fcompany%2F22333%2Feh1mycy7nnltf5ah__400_400.jpg&w=400&q=75",
+      "jobName": "웹 프론트엔드 개발자(React)",
+      "company": "블루비커",
+      "location": {"contry": "한국", "city": "서울"},
+      "signingBonus": 1000000,
+      "logoLink": "https://static.wanted.co.kr/images/wdes/0_5.0852ff23.jpg",
+      "biz": ["IT", "컨텐츠"]
     },
     {
       "id": 25

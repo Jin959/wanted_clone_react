@@ -1,0 +1,20 @@
+.TagFilterSliderItem  {
+  flex-shrink: 0;
+}
+
+.TagFilterSliderItem button {
+  height: 32px;
+  background-color: rgb(255, 255, 255);
+  padding: 5px 22px;
+  border: 1px solid rgb(225, 225, 225);
+  border-radius: 30px;
+}
+
+.TagFilterSliderItem button:hover {
+  border: 1px solid rgba(51, 102, 255, .3);
+}
+
+.TagFilterSliderItem img {
+  width: 14px;
+  height: 14px;
+}
