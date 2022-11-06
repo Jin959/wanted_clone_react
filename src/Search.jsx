@@ -40,6 +40,8 @@ const Search = () => {
               logoLink={ele.logoLink}
               company={ele.company}
               biz={ele.biz}
+              styleWidth={'calc(50% - 10px'}
+              styleMargin={'5px'}
             />
           })
         }

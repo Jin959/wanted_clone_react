@@ -206,6 +206,11 @@
   margin-top: 5px;
 }
 
+.RecruiteDetail .article_divider {
+  border: 0;
+  border-top: 1px solid #eee;
+}
+
 .RecruiteDetail .skill_item {
   background-color: #e4f4ec;
   border-radius: 20px;

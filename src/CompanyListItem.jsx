@@ -3,7 +3,12 @@ import './css/company_list_item_style.css';
 
 const CompanyListItem = (props) => {
   return (
-    <Link to='#none' className="CompanyListItem">
+    <Link to='#none' className="CompanyListItem"
+      style={{
+        width: props.styleWidth,
+        margin: props.styleMargin
+      }}
+    >
       <div className="CompanyListItem-item">
         <div className="logo_wrapper">
           <img src={props.logoLink} alt="" />

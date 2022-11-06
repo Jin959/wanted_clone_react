@@ -1,6 +1,8 @@
 import './css/recruite-detail_style.css';
 import { Link } from 'react-router-dom';
 import GridItem from './GridItem';
+import Map from './Map';
+import CompanyListItem from './CompanyListItem';
 import gridData from './json/job_data.json'
 
 const RecruiteDetail = () => {  
@@ -259,7 +261,13 @@ const RecruiteDetail = () => {
             </div>
           </div>
 
-          <div className="article_company"></div>
+          <hr className='article_divider'/>
+
+          <Map/>
+          <CompanyListItem
+            styleWidth = {'content-box'}
+            styleMargin = {'80px 0 0'}
+          />
           <div className="article_warning"></div>
         </div>
 
