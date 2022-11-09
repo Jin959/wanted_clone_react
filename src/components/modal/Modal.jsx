@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import './css/modal_style.css';
+import './css/modal.css';
 
 import ModalLogin from './ModalLogin';
 import ModalRegistration from './ModalRegistration'
@@ -7,7 +7,7 @@ import ModalRegistration from './ModalRegistration'
 const Modal = ({ setModalFlag, setLimitScrollFlag }) => {
 
   const [email, setEmail] = useState('');
-  const [nowregistrationFlag, setNowRegistrationFlag] = useState(false);
+  const [nowRegistrationFlag, setNowRegistrationFlag] = useState(false);
 
   const closeModal = () => {
     setModalFlag(false);
@@ -24,7 +24,7 @@ const Modal = ({ setModalFlag, setLimitScrollFlag }) => {
   return (
     <div>
       {
-        (!nowregistrationFlag) ? (
+        (!nowRegistrationFlag) ? (
           <ModalLogin
             closeModal={closeModal}
             email={email}

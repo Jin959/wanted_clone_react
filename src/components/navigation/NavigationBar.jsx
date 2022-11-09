@@ -1,5 +1,5 @@
-import './css/navigation_bar_style.css';
-import { ReactComponent as SearchIcon } from "./assets/SearchIcon.svg";
+import './css/navigation_bar.css';
+import { ReactComponent as SearchIcon } from "../../assets/SearchIcon.svg";
 import {Link} from 'react-router-dom';
 
 const NavigationBar = ({ setModalFlag, setSearchBarFlag }) => {

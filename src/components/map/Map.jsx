@@ -1,4 +1,4 @@
-import './css/map_style.css'
+import './css/map.css'
 import { useRef, useEffect, useCallback } from "react";
 import { Link } from 'react-router-dom';
 

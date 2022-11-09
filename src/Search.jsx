@@ -1,8 +1,10 @@
-import './css/search_style.css'
+import './css/search.css'
 import { useSearchParams } from 'react-router-dom';
-import TagFilter from "./TagFilter"
-import GridItem from "./GridItem"
-import CompanyListItem from './CompanyListItem';
+
+import TagFilter from "./components/tag_filter/TagFilter"
+import GridItem from "./components/items/GridItem"
+import CompanyListItem from './components/items/CompanyListItem';
+
 import jobData from './json/job_data.json';
 
 const Search = () => {

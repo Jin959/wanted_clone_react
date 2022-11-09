@@ -1,12 +1,12 @@
 import { useEffect, useRef } from 'react';
-import './css/resistration_modal_style.css'
-import {Link} from 'react-router-dom';
+import './css/modal_resistration.css'
+
+import ConsentCheckBox from './ConsentCheckBox';
 
 const ModalRegistration = ({ closeModal, email }) => {
   const emailResisitrationInput = useRef(email);
   useEffect(() => {
     emailResisitrationInput.current.value = email;
-    console.log('useEffect 실행!');
   },[]);
 
   return (
@@ -70,39 +70,7 @@ const ModalRegistration = ({ closeModal, email }) => {
               <input type="text" name="modal_regi_email" placeholder="비밀번호를 다시 한번 입력해주세요." />
             </div>
             <p className="modal_regi_pw_info">영문 대소문자, 숫자, 특수문자를 3가지 이상으로 조합해 8자 이상 16자 이하로 입력해주세요.</p>
-            <div className="modal_regi_agree_check">
-              <div className="modal_agree_all">
-                <div>
-                  <input type="checkbox" name="modal_agree_all" value="modal_agree_all" defaultChecked />
-                  <p>전체동의</p>
-                </div>
-              </div>
-              <hr />
-              <div className="modal_agree_age">
-                <div>
-                  <input type="checkbox" name="modal_agree_age" value="modal_agree_age" defaultChecked />
-                  <p>만 14세 이상입니다.(필수)</p>
-                </div>
-              </div>
-              <div className="modal_agree_oneid">
-                <div>
-                  <input type="checkbox" name="modal_agree_oneid" value="modal_agree_oneid" defaultChecked />
-                  <p>oneID 이용약관 동의(필수)</p>
-                </div>
-                <div>
-                  <Link to="/#none">자세히</Link>
-                </div>
-              </div>
-              <div className="modal_agree_collect">
-                <div>
-                  <input type="checkbox" name="modal_agree_collect" value="modal_agree_collect" defaultChecked />
-                  <p>개인정보 및 수집 이용 동의(필수)</p>
-                </div>
-                <div>
-                  <Link to="/#none">자세히</Link>
-                </div>
-              </div>
-            </div>
+            <ConsentCheckBox/>
           </form>
         </div>
         <div className="modal_footer">

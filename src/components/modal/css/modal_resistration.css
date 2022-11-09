@@ -1,0 +1,30 @@
+.modal_regi_phone_auth {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal_regi_phone_auth input {
+  width: 60%;
+  margin: 0;
+}
+
+.modal_regi_phone_auth button {
+
+
+  border: 1px solid #e1e2e3;
+  border-radius: 5px;
+  width: 35%;
+  height: 50px;
+  font-size: 16px;
+
+  color: #3366ff;
+  background-color: transparent;
+}
+
+.ModalResistration .modal_regi_pw_info {
+  text-align: left;
+
+  font-size: 12px;
+  line-height: 1.428;
+}

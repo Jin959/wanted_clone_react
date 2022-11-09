@@ -1,9 +1,11 @@
-import './css/recruite-detail_style.css';
+import './css/recruite_detail.css';
 import { Link } from 'react-router-dom';
-import GridItem from './GridItem';
-import Map from './Map';
-import CompanyListItem from './CompanyListItem';
-import gridData from './json/job_data.json'
+
+import Map from './components/map/Map';
+import GridItem from './components/items/GridItem';
+import CompanyListItem from './components/items/CompanyListItem';
+
+import jobData from './json/job_data.json'
 
 const RecruiteDetail = () => {  
   return (
@@ -328,7 +330,7 @@ const RecruiteDetail = () => {
       <h5 className="grid_title">이 포지션을 찾고 계셨나요?</h5>
       <div className="grid_container">
         {
-          gridData.jobs.map( ele => {
+          jobData.jobs.map( ele => {
             return <GridItem
               key={ele.id}
               id={ele.id}

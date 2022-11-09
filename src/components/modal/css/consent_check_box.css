@@ -1,0 +1,38 @@
+.ConsentCheckBox>div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+
+  margin: 10px 0;
+}
+
+.ConsentCheckBox .modal_agree_all>div>p {
+  color: #333;
+  font-weight: 600;
+}
+
+
+
+.ConsentCheckBox>div>div:first-child {
+  font-weight: 500;
+  display: flex;
+  flex-direction: row;
+  vertical-align: middle;
+}
+
+.ConsentCheckBox p {
+  position: relative;
+  top: 5px;
+}
+
+.ConsentCheckBox input {
+  display: inline;
+  width: 18px;
+  height: 18px;
+}
+
+.ConsentCheckBox hr {
+  border: 0;
+  border-top: solid 1px #e1e2e3;
+}

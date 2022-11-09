@@ -1,16 +1,20 @@
 import './css/css_reset.css';
 import { useEffect, useState, useRef } from 'react';
 import  { Routes, Route } from 'react-router-dom';
-import NavigationBar from './NavigationBar';
+
 import Main from './Main';
-import Footer from './Footer';
-import Modal from './modal/Modal';
-import SearchBar from './modal/SearchBar';
 import RecruiteDetail from './RecruiteDetail';
 import RecruiteList from './RecruiteList';
 import Search from './Search';
 
+import NavigationBar from './components/navigation/NavigationBar';
+import Footer from './components/footer/Footer';
+import Modal from './components/modal/Modal';
+import SearchBar from './components/modal/SearchBar';
+
 function App() {
+  //0 1 2 숫자로 고쳐서 플래그를 세개의 역할을 하개한다
+  // 로그인창에 있을지 회원가입으로 갈지 로그인으로 갈지를 정한다.
   const [modalFlag, setModalFlag] = useState(false);
   const [limitScrollFlag, setLimitScrollFlag] = useState(false);
   const [searchBarFlag, setSearchBarFlag] = useState(false);

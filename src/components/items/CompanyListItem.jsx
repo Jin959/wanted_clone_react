@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import './css/company_list_item_style.css';
+import './css/company_list_item.css';
 
 const CompanyListItem = (props) => {
   return (

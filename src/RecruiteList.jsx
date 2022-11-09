@@ -1,9 +1,11 @@
-import './css/recruite-list_style.css';
+import './css/recruite_list.css';
 import { ReactComponent as BookMarkIcon } from "./assets/BookMarkIcon.svg";
 import { Link } from 'react-router-dom';
-import GridItem from './GridItem';
+
+import GridItem from './components/items/GridItem';
+import TagFilter from './components/tag_filter/TagFilter';
+
 import gridData from './json/job_data.json';
-import TagFilter from './TagFilter';
 
 const RecruiteList = () => {
   return (

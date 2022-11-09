@@ -1,12 +1,12 @@
-import "./css/mian_style.css";
-import Section1 from './mainsection/MainSection1';
-import Section2 from './mainsection/MainSection2';
-import Section3 from './mainsection/MainSection3';
-import Section4 from './mainsection/MainSection4';
-import Section5 from './mainsection/MainSection5';
-import Section6 from './mainsection/MainSection6';
-import Section7 from './mainsection/MainSection7';
-import Section8 from './mainsection/MainSection8';
+import "./css/mian.css";
+import Section1 from './components/main/MainSection1';
+import Section2 from './components/main/MainSection2';
+import Section3 from './components/main/MainSection3';
+import Section4 from './components/main/MainSection4';
+import Section5 from './components/main/MainSection5';
+import Section6 from './components/main/MainSection6';
+import Section7 from './components/main/MainSection7';
+import Section8 from './components/main/MainSection8';
 
 
 const Main = () => {

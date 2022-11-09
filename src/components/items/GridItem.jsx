@@ -1,6 +1,6 @@
-import './css/grid_item_style.css'
+import './css/grid_item.css'
 import { Link } from "react-router-dom"
-import parseMoney from './jsmodule/parseMoney.js'
+import parseMoney from '../../module/parseMoney.js'
 
 const GridItem = (props) => {
   return (

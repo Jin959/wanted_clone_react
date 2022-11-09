@@ -1,4 +1,4 @@
-import './css/tag_filter_slider_item_style.css'
+import './css/tag_filter_slider_item.css'
 
 const TagFilterSliderItem = (props) => {
   return (

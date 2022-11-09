@@ -1,6 +1,6 @@
 import './css/main_section2.css';
 import MainGridItem from './MainGridItem';
-import mainGirdData from '../json/main_grid_data.json';
+import mainGirdData from '../../json/main_grid_data.json';
 
 const MainSection2 = () => {
   return (

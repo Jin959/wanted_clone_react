@@ -1,9 +1,18 @@
-import './css/login_modal_style.css'
+import './css/modal_login.css'
 import {Link} from 'react-router-dom';
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
+
+const user = {
+  email: "qwer@qwer.qwer",
+  pw: "qwer1234!!"
+}
 
 const ModalLogin = (props) => {
-  const [RegistrationAbleFlag, setRegistrationAbleFlag] = useState(false);
+  const [pw, setPw] = useState('');
+
+  const [emailValidFlag, setEmailValidFlag] = useState(false);
+  const [pwValidFlag, setPwValidFlag] = useState(false);
+  const [registrationAbleFlag, setRegistrationAbleFlag] = useState(false);
   const {
     closeModal,
     email,
@@ -11,26 +20,46 @@ const ModalLogin = (props) => {
     setNowRegistrationFlag
   } = props;
 
-  const isEmailValid = (e) => {    
-    setEmail(e.target.value); 
-    
-    // RFC 5322 형식
-    const emailRegex = /^[-0-9A-Za-z!#$%&'*+/=?^_`{|}~.]+@[-0-9A-Za-z!#$%&'*+/=?^_`{|}~]+[.]{1}[0-9A-Za-z]/;
-    // 안됨:  /^([^<>()[].,;:\s@"]+)@(([^<>()[].,;:\s@"]+.)+[^<>()[].,;:\s@"]{2,})$/
+  const isEmailValid = useCallback(
+    e => {    
+      setEmail(e.target.value);
+      // RFC 5322 형식
+      const emailRegex = /^[-0-9A-Za-z!#$%&'*+/=?^_`{|}~.]+@[-0-9A-Za-z!#$%&'*+/=?^_`{|}~]+[.]{1}[0-9A-Za-z]/;    
 
-    // setEmail(e.target.value); 은 비동기적으로 처리된다.
-    // 따라서 regex.test(email)처럼 state인 smail이 아니라 
-    // regex.test(e.target.value)에 e.target.value를 사용한다.
-    // 만약 useEffect를 사용한다고 했을때 두번째 인자로 [email]을 줘서 email이 바뀔때 마다 실행하도록 한다면
-    // regex.test(email)로 사용할 수 있다.
-    if (emailRegex.test(e.target.value)) setRegistrationAbleFlag(true);
-    else setRegistrationAbleFlag(false);
-  }
+      if (emailRegex.test(e.target.value)) {      
+        setEmailValidFlag(true);
+      } else {
+        setEmailValidFlag(false);
+      }
+    },
+    [],
+  )
 
-  const onClcikResigtrationBtn = () => {
+  const isPwVaild = useCallback(
+    e => {
+      setPw(e.target.value);
+  
+      const pwRegex = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+])(?!.*[^a-zA-z0-9$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/;
+  
+      if (pwRegex.test(e.target.value)) {
+        setPwValidFlag(true);
+      } else {
+        setPwValidFlag(false);
+      }
+    },
+    [],
+  )
+  
+
+  useEffect(() => {
+    if (emailValidFlag && pwValidFlag) setRegistrationAbleFlag(true);      
+  }, [emailValidFlag, pwValidFlag])
+  
+  const onSubmitEmailPw = (e) => {
+    e.preventDefault();
     setNowRegistrationFlag(true);
   }
-
+  
   return (
     <div className="ModalLogin">
       <div className="modal_wrapper">
@@ -43,30 +72,68 @@ const ModalLogin = (props) => {
           X
         </button>
         <div className="modal_main">
-          <form>
+          <form
+            onSubmit={onSubmitEmailPw}
+          >
             <h1>직장인을 위한<br />커리어 플랫폼, 원티드!</h1>
             <h2>커리어 성장과 행복을 위한 여정<br />지금 원티드에서 시작하세요.</h2>
             <div className="modal_input">
               <div>이메일</div>
               <input
+                className={
+                  (!emailValidFlag && email.length > 0) ? (
+                    "modal_input_error"
+                  ) : (
+                    "modal_input_valid"
+                  )
+                }
                 type="text"
-                name="modal_email"
+                name="email"
                 placeholder="이메일을 입력해주세요."
                 onChange={isEmailValid}
               />
+              <div className='modal_input_error_message'>
+                {
+                  (!emailValidFlag && email.length > 0) && (
+                  <span>올바른 이메일을 입력해주세요.</span>
+                  )
+                }
+              </div>
+              <div>비밀번호</div>
+              <input
+                className={
+                  (!pwValidFlag && pw.length > 0) ? (
+                    "modal_input_error"
+                  ) : (
+                    "modal_input_valid"
+                  )
+                }
+                type="password"
+                name="pw"
+                placeholder="비밀번호를 입력해주세요."
+                onChange={isPwVaild}
+              />
+              <div className='modal_input_error_message'>
+                {
+                  (!pwValidFlag && pw.length > 0) && (
+                  <span>비밀번호가 일치하지 않습니다.</span>
+                  )
+                }
+              </div>
             </div>
             {
-              RegistrationAbleFlag ? (
+              registrationAbleFlag ? (
                 <button
                   className="modal_btn"
                   type="button"
-                  onClick={onClcikResigtrationBtn}
+                  onClick={onSubmitEmailPw}
                 >
                   이메일로 계속하기
                 </button>
               ) : (
                 <button
                   className="modal_btn modal_disabled"
+                  disabled='disabled'
                   type="button"
                 >
                   이메일로 계속하기

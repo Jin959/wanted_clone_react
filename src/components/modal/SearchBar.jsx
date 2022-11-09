@@ -1,7 +1,7 @@
-import './css/search_bar_style.css';
+import './css/search_bar.css';
 import { useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ReactComponent as SearchIcon } from "../assets/SearchIcon.svg";
+import { ReactComponent as SearchIcon } from "../../assets/SearchIcon.svg";
 
 const SearchBar = ({ searchBarFlag, setSearchBarFlag }) => {
   const navigate = useNavigate();

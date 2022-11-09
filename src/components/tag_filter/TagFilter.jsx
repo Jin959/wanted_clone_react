@@ -1,7 +1,7 @@
-import './css/tag_filter_style.css';
+import './css/tag_filter.css';
 import TagFilterSliderItem from './TagFilterSliderItem';
-import TagFilterData from './json/tag_filter_data.json'
-import chooseItemColor from './jsmodule/chooseItemColor'
+import TagFilterData from '../../json/tag_filter_data.json'
+import chooseItemColor from '../../module/chooseItemColor'
 
 const TagFilter = () => {
 
