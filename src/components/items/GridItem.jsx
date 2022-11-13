@@ -1,11 +1,31 @@
-import './css/grid_item.css'
-import { Link } from "react-router-dom"
-import parseMoney from '../../module/parseMoney.js'
+import './css/grid_item.css';
+import { Link } from "react-router-dom";
+import parseMoney from '../../module/parseMoney.js';
+import { ReactComponent as BookMarkIconUnchecked } from "../../assets/items/BookMarkIconUnchecked.svg";
+import { ReactComponent as BookMarkIconChecked } from "../../assets/items/BookMarkIconChecked.svg";
+
+import { useCallback } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
+import { makeToggleAction } from '../../redux_module/bookmark';
 
 const GridItem = (props) => {
+  const bookmarkList = useSelector(state => state.bookmarkList);
+  const dispatch = useDispatch();
+  const onClickBookmarkBtn = useCallback((e) => {
+    e.preventDefault();
+    dispatch(makeToggleAction(props.id));
+  }, [dispatch]);
+
   return (
     <Link to={`/wd/${props.id}`} className="GridItem">
       <div className="grid_img_wrapper">
+        <button className="bookmark_btn"
+          onClick={onClickBookmarkBtn}
+        >
+          {
+            bookmarkList.includes(props.id) ? <BookMarkIconChecked/> : <BookMarkIconUnchecked/>
+          }
+        </button>
         <img src={props.imgLink} alt="❌" />
       </div>
       <div className="grid_body">

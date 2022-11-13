@@ -1,7 +1,7 @@
 import './css/search_bar.css';
 import { useRef, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { ReactComponent as SearchIcon } from "../../assets/SearchIcon.svg";
+import { ReactComponent as SearchIcon } from "../../assets/navigation/SearchIcon.svg";
 
 const SearchBar = ({ searchBarFlag, setSearchBarFlag }) => {
   const navigate = useNavigate();
@@ -37,7 +37,7 @@ const SearchBar = ({ searchBarFlag, setSearchBarFlag }) => {
           >
             <input
               className='SearchBar-input'
-              type="search"
+              type="text"
               placeholder='#태그, 회사, 포지션 검색'
               onClick={preventClose}
               ref={searchInput}

@@ -1,5 +1,5 @@
 import './css/recruite_list.css';
-import { ReactComponent as BookMarkIcon } from "./assets/BookMarkIcon.svg";
+import { ReactComponent as BookMarkIconFill } from "./assets/recruite_list/BookMarkIconFill.svg";
 import { Link } from 'react-router-dom';
 
 import GridItem from './components/items/GridItem';
@@ -32,16 +32,18 @@ const RecruiteList = () => {
 
       <main>
         <div className='RecruteList-main_wrapper'>
-          <div className="RecruiteList-main_title">
+          <Link className="RecruiteList-main_title"
+            to="/bookmarks"
+          >
             <div>
-              <BookMarkIcon />
+              <BookMarkIconFill />
               북마크 모아보기
               <svg width="12" height="12" viewBox="0 0 12 12"><path fill="currentColor" d="M4.22 9.72a.75.75 0 001.06 1.06l4.25-4.25a.75.75 0 000-1.06L5.28 1.22a.75.75 0 00-1.06 1.06L7.94 6 4.22 9.72z"></path></svg>
             </div>
             <div>
               적극 채용 중인 회사
             </div>
-          </div>
+          </Link>
 
           <div className="RecruiteList-flex_link">
             <Link to="#none">

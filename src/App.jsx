@@ -6,6 +6,7 @@ import Main from './Main';
 import RecruiteDetail from './RecruiteDetail';
 import RecruiteList from './RecruiteList';
 import Search from './Search';
+import BookMark from './BookMark';
 
 import NavigationBar from './components/navigation/NavigationBar';
 import Footer from './components/footer/Footer';
@@ -59,6 +60,7 @@ function App() {
         <Route path="/wdlist" element={<RecruiteList/>}/>
         <Route path="/wd/*" element={<RecruiteDetail/>}/>
         <Route path="/search" element={<Search/>}/>
+        <Route path="/bookmarks" element={<BookMark/>}/>
       </Routes>
       <Footer />
     </div>

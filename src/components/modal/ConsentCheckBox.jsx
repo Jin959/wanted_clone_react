@@ -18,12 +18,12 @@ const ConsentCheckBox = () => {
       setCheckedList([]);
     }
     console.log(checkedList);
-  }, [])
+  }, [consentList])
 
   const onCheckedEach = useCallback( (e, checkedEle) => {
     if (e.target.checked) {
       setCheckedList([...checkedList, checkedEle]);
-    } else {      
+    } else {
       setCheckedList(checkedList.filter( ele => ele!==checkedEle));
     }
     console.log(checkedList)
