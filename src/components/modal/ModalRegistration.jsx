@@ -1,13 +1,19 @@
-import { useEffect, useRef } from 'react';
+import { useEffect, useRef, useCallback } from 'react';
 import './css/modal_resistration.css'
+import { AiOutlineClose } from "react-icons/ai";
 
 import ConsentCheckBox from './ConsentCheckBox';
+import { useDispatch } from 'react-redux';
+import { CLOSE } from '../../redux_module/modalFlag';
 
-const ModalRegistration = ({ closeModal, email }) => {
+const ModalRegistration = ({ email }) => {
   const emailResisitrationInput = useRef(email);
   useEffect(() => {
     emailResisitrationInput.current.value = email;
   },[]);
+
+  const dispatch = useDispatch();
+  const onClickClose = useCallback(() => dispatch({type: CLOSE}), [dispatch]);
 
   return (
     <div className="ModalResistration">
@@ -15,9 +21,9 @@ const ModalRegistration = ({ closeModal, email }) => {
         <div className="modal_header">회원가입</div>
         <button
           className="modal_close"
-          onClick={closeModal}
+          onClick={onClickClose}
         >
-          X
+          <AiOutlineClose/>
         </button>
         <div className="modal_main">
           <form>

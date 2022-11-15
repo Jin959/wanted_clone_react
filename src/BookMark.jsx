@@ -6,7 +6,7 @@ import GridItem from "./components/items/GridItem"
 import jobData from './json/job_data.json';
 
 const BookMark = () => {
-  const bookmarkList = useSelector(state => state.bookmarkList);
+  const bookmarkList = useSelector(state => state.bookmarkReducer.bookmarkList);
 
   const bookmarkData = jobData.jobs.filter(ele => {
     if (ele.id !== undefined ) {

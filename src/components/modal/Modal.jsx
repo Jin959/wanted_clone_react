@@ -1,39 +1,32 @@
-import { useState, useEffect } from 'react';
 import './css/modal.css';
+import { useState, useEffect } from 'react';
+import { useSelector } from 'react-redux';
 
 import ModalLogin from './ModalLogin';
 import ModalRegistration from './ModalRegistration'
 
-const Modal = ({ setModalFlag, setLimitScrollFlag }) => {
-
+const Modal = ({ setLimitScrollFlag }) => {
   const [email, setEmail] = useState('');
-  const [nowRegistrationFlag, setNowRegistrationFlag] = useState(false);
-
-  const closeModal = () => {
-    setModalFlag(false);
-    setLimitScrollFlag(false);
-    setNowRegistrationFlag(false);
-  }
 
   useEffect(() => {
     setLimitScrollFlag(true);
   });
 
-
-
+  const modalFlag = useSelector(state => state.modalFlagReducer.flag);
+  
   return (
     <div>
       {
-        (!nowRegistrationFlag) ? (
+        (modalFlag === 1) && (
           <ModalLogin
-            closeModal={closeModal}
             email={email}
             setEmail={setEmail}
-            setNowRegistrationFlag={setNowRegistrationFlag}
           />
-        ) : (
+        )
+      }
+      {
+        (modalFlag === 2) && (
           <ModalRegistration
-            closeModal={closeModal}
             email={email}
           />
         )

@@ -9,7 +9,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { makeToggleAction } from '../../redux_module/bookmark';
 
 const GridItem = (props) => {
-  const bookmarkList = useSelector(state => state.bookmarkList);
+  const bookmarkList = useSelector(state => state.bookmarkReducer.bookmarkList);
   const dispatch = useDispatch();
   const onClickBookmarkBtn = useCallback((e) => {
     e.preventDefault();

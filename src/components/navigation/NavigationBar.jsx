@@ -1,11 +1,14 @@
 import './css/navigation_bar.css';
+import { useCallback } from 'react';
 import { ReactComponent as SearchIcon } from "../../assets/navigation/SearchIcon.svg";
 import {Link} from 'react-router-dom';
 
-const NavigationBar = ({ setModalFlag, setSearchBarFlag }) => {
-  const onClickModal = () => {
-    setModalFlag(true);
-  }
+import { useDispatch } from 'react-redux';
+import { LOGIN } from '../../redux_module/modalFlag';
+
+const NavigationBar = ({ setSearchBarFlag }) => {
+  const dispatch = useDispatch();
+  const onClickModal = useCallback(() => dispatch({type: LOGIN}), [dispatch])
 
   const onClickSearchBtn = () => {
     setSearchBarFlag(true);

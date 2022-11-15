@@ -1,24 +1,22 @@
 import './css/modal_login.css'
 import {Link} from 'react-router-dom';
 import { useState, useEffect, useCallback } from "react";
+import { AiOutlineClose } from "react-icons/ai";
+
+import { useDispatch } from 'react-redux';
+import { CLOSE, RESISTRATION } from '../../redux_module/modalFlag';
 
 const user = {
   email: "qwer@qwer.qwer",
   pw: "qwer1234!!"
 }
 
-const ModalLogin = (props) => {
+const ModalLogin = ({ email, setEmail }) => {
   const [pw, setPw] = useState('');
-
   const [emailValidFlag, setEmailValidFlag] = useState(false);
   const [pwValidFlag, setPwValidFlag] = useState(false);
+
   const [registrationAbleFlag, setRegistrationAbleFlag] = useState(false);
-  const {
-    closeModal,
-    email,
-    setEmail,
-    setNowRegistrationFlag
-  } = props;
 
   const isEmailValid = useCallback(
     e => {    
@@ -50,15 +48,19 @@ const ModalLogin = (props) => {
     [],
   )
   
-
   useEffect(() => {
     if (emailValidFlag && pwValidFlag) setRegistrationAbleFlag(true);      
   }, [emailValidFlag, pwValidFlag])
+
+  const dispatch = useDispatch();
+  const dispatchResistration = useCallback(() => dispatch({type: RESISTRATION}), [dispatch]);
   
   const onSubmitEmailPw = (e) => {
     e.preventDefault();
-    setNowRegistrationFlag(true);
+    dispatchResistration();
   }
+
+  const onClickClose = useCallback(() => dispatch({type: CLOSE}), [dispatch]);
   
   return (
     <div className="ModalLogin">
@@ -68,8 +70,8 @@ const ModalLogin = (props) => {
         </div>
         <button
           className="modal_close"
-          onClick={closeModal}>
-          X
+          onClick={onClickClose}>
+          <AiOutlineClose/>
         </button>
         <div className="modal_main">
           <form
