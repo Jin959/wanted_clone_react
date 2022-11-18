@@ -18,6 +18,7 @@ function App() {
   const [limitScrollFlag, setLimitScrollFlag] = useState(false);
   const [searchBarFlag, setSearchBarFlag] = useState(false);
   const appBody = useRef();
+  const modalFlag = useSelector(state => state.modalFlagReducer.flag);
 
   useEffect(() => {
     if (limitScrollFlag) {
@@ -31,7 +32,10 @@ function App() {
     }
   }, [limitScrollFlag]);
 
-  const modalFlag = useSelector(state => state.modalFlagReducer.flag);
+  useEffect(() => {
+    if(modalFlag !== 0) setLimitScrollFlag(true);
+    else setLimitScrollFlag(false);
+  },[modalFlag]);
 
   return (
     <div className="App" ref={appBody}>
@@ -40,9 +44,7 @@ function App() {
       />
       {
         (modalFlag !== 0) &&
-        <Modal
-          setLimitScrollFlag={setLimitScrollFlag}
-        />
+        <Modal/>
       }
       {
         searchBarFlag &&

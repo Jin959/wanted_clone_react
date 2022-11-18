@@ -6,20 +6,20 @@ import { AiOutlineClose } from "react-icons/ai";
 import { useDispatch } from 'react-redux';
 import { CLOSE, RESISTRATION } from '../../redux_module/modalFlag';
 
-const user = {
-  email: "qwer@qwer.qwer",
-  pw: "qwer1234!!"
-}
+const users = new Map([
+  ["qwer@qwer.qwer", "qwer1234!!"],
+  ["jlee@jlee.jlee", "jlee1234!!"],
+  ["qw@qw.qw", "qwer12!!"]
+]);
 
 const ModalLogin = ({ email, setEmail }) => {
   const [pw, setPw] = useState('');
   const [emailValidFlag, setEmailValidFlag] = useState(false);
   const [pwValidFlag, setPwValidFlag] = useState(false);
 
-  const [registrationAbleFlag, setRegistrationAbleFlag] = useState(false);
+  const [formValidFlag, setFormVaildFlag] = useState(false);
 
-  const isEmailValid = useCallback(
-    e => {    
+  const isEmailValid = useCallback( e => {    
       setEmail(e.target.value);
       // RFC 5322 형식
       const emailRegex = /^[-0-9A-Za-z!#$%&'*+/=?^_`{|}~.]+@[-0-9A-Za-z!#$%&'*+/=?^_`{|}~]+[.]{1}[0-9A-Za-z]/;    
@@ -30,11 +30,10 @@ const ModalLogin = ({ email, setEmail }) => {
         setEmailValidFlag(false);
       }
     },
-    [],
+    []
   )
 
-  const isPwVaild = useCallback(
-    e => {
+  const isPwVaild = useCallback( e => {
       setPw(e.target.value);
   
       const pwRegex = /^(?=.*[a-zA-z])(?=.*[0-9])(?=.*[$`~!@$!%*#^?&\\(\\)\-_=+])(?!.*[^a-zA-z0-9$`~!@$!%*#^?&\\(\\)\-_=+]).{8,16}$/;
@@ -45,19 +44,26 @@ const ModalLogin = ({ email, setEmail }) => {
         setPwValidFlag(false);
       }
     },
-    [],
+    []
   )
   
   useEffect(() => {
-    if (emailValidFlag && pwValidFlag) setRegistrationAbleFlag(true);      
+    if (emailValidFlag && pwValidFlag) setFormVaildFlag(true);      
   }, [emailValidFlag, pwValidFlag])
 
   const dispatch = useDispatch();
   const dispatchResistration = useCallback(() => dispatch({type: RESISTRATION}), [dispatch]);
+  const onLogin = useCallback(() => dispatch({type: CLOSE}), [dispatch]);
   
   const onSubmitEmailPw = (e) => {
     e.preventDefault();
-    dispatchResistration();
+    if (!formValidFlag) return;
+    if (users.has(email)) {
+      localStorage.setItem("email", email);
+      onLogin();
+    } else {
+      dispatchResistration();
+    }
   }
 
   const onClickClose = useCallback(() => dispatch({type: CLOSE}), [dispatch]);
@@ -124,7 +130,7 @@ const ModalLogin = ({ email, setEmail }) => {
               </div>
             </div>
             {
-              registrationAbleFlag ? (
+              formValidFlag ? (
                 <button
                   className="modal_btn"
                   type="button"

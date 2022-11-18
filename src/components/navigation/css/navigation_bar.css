@@ -82,6 +82,7 @@ nav > div
 .nav_right
 {
     width: 275.74px;
+    justify-content: right;
 }
 
 .nav_right > div:nth-child(1)

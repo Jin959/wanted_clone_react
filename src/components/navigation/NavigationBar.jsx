@@ -1,21 +1,40 @@
 import './css/navigation_bar.css';
-import { useCallback } from 'react';
+import { useState, useEffect, useCallback, useRef } from 'react';
 import { ReactComponent as SearchIcon } from "../../assets/navigation/SearchIcon.svg";
-import {Link} from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import { AiOutlineBell } from "react-icons/ai";
+import { FaUserCircle } from "react-icons/fa";
 
 import { useDispatch } from 'react-redux';
 import { LOGIN } from '../../redux_module/modalFlag';
 
 const NavigationBar = ({ setSearchBarFlag }) => {
   const dispatch = useDispatch();
-  const onClickModal = useCallback(() => dispatch({type: LOGIN}), [dispatch])
+  const onClickModal = useCallback(() => dispatch({ type: LOGIN }), [dispatch])
 
   const onClickSearchBtn = () => {
     setSearchBarFlag(true);
   }
-  
+
   const onPointerDropDownMenu = () => {
     window.alert('onpointerenter');
+  }
+
+  const email = localStorage.getItem('email');
+  const [loginState, setLoginState] = useState(false);
+
+  useEffect(() => {
+    console.log(email);
+    if (email === null) {
+      setLoginState(false);
+    } else {
+      setLoginState(true);
+    }
+  })
+
+  const onClickLogout = () => {
+    localStorage.removeItem('email');
+    setLoginState(false);
   }
 
   return (
@@ -43,11 +62,20 @@ const NavigationBar = ({ setSearchBarFlag }) => {
         <div className="nav_right">
           <div>
             <button onClick={onClickSearchBtn}>
-              <SearchIcon/>
+              <SearchIcon />
             </button>
           </div>
           <div>
-            <button onClick={onClickModal}>회원가입/로그인</button>
+            {
+              loginState ? (
+                <>
+                  <button><AiOutlineBell style={{ width: '20', height: '20' }} /></button>
+                  <button onClick={onClickLogout}><FaUserCircle style={{ width: '22', height: '22' }} /></button>
+                </>
+              ) : (
+                <button onClick={onClickModal}>회원가입/로그인</button>
+              )
+            }
           </div>
           <div>|</div>
           <div>
