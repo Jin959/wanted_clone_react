@@ -7,6 +7,13 @@ import CompanyListItem from './components/items/CompanyListItem';
 
 import jobData from './json/job_data.json';
 
+import styled from 'styled-components';
+
+const StyledCompanyListItem = styled(CompanyListItem)`
+  width: calc(45% - 10px);
+  margin: 5px;
+`;
+
 const Search = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get('query');
@@ -36,14 +43,12 @@ const Search = () => {
       <div className='Search-company_list_container'>
         {
           companyData.map((ele) => {
-            return <CompanyListItem
+            return <StyledCompanyListItem
               key={ele.id}
               id={ele.id}
               logoLink={ele.logoLink}
               company={ele.company}
               biz={ele.biz}
-              styleWidth={'calc(50% - 10px'}
-              styleMargin={'5px'}
             />
           })
         }

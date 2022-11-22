@@ -7,6 +7,13 @@ import CompanyListItem from './components/items/CompanyListItem';
 
 import jobData from './json/job_data.json'
 
+import styled from 'styled-components';
+
+const StyledCompanyListItem = styled(CompanyListItem)`
+  width: content-box;
+  margin: 80px 0 0;
+`;
+
 const RecruiteDetail = () => {  
   return (
     <div className="RecruiteDetail">
@@ -266,10 +273,7 @@ const RecruiteDetail = () => {
           <hr className='article_divider'/>
 
           <Map/>
-          <CompanyListItem
-            styleWidth = {'content-box'}
-            styleMargin = {'80px 0 0'}
-          />
+          <StyledCompanyListItem/>
           <div className="article_warning"></div>
         </div>
 

@@ -23,7 +23,8 @@
   display: flex;
   justify-content: center;
 
-  height: 187.5px;
+  width: 15.625rem;
+  height: 11.7188rem;
   border-radius: 5px;
   border: 1px solid #e3e3e3;
   overflow: hidden;
@@ -83,4 +84,11 @@
   color: rgb(3, 3, 3);
   margin-top: 10px;
   text-overflow: ellipsis;
+}
+
+@media(max-width:970px) {
+  .GridItem .grid_img_wrapper {
+    width: 100%;    
+    height: auto;
+  }
 }

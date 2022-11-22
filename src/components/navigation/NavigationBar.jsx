@@ -1,5 +1,5 @@
 import './css/navigation_bar.css';
-import { useState, useEffect, useCallback, useRef } from 'react';
+import { useState, useEffect, useCallback } from 'react';
 import { ReactComponent as SearchIcon } from "../../assets/navigation/SearchIcon.svg";
 import { Link } from 'react-router-dom';
 import { AiOutlineBell } from "react-icons/ai";
@@ -24,27 +24,31 @@ const NavigationBar = ({ setSearchBarFlag }) => {
   const [loginState, setLoginState] = useState(false);
 
   useEffect(() => {
-    console.log(email);
+    // console.log(`start effect - `, typeof email, `email : ${email}`);
     if (email === null) {
       setLoginState(false);
     } else {
       setLoginState(true);
     }
-  })
+    // console.log(`end effect - `, typeof email, `email : ${email}`);
+  }, [email])
 
-  const onClickLogout = () => {
-    localStorage.removeItem('email');
-    setLoginState(false);
-  }
+  const onClickLogout = useCallback(
+    () => {
+      localStorage.removeItem('email');
+      setLoginState(false);
+    },
+    []
+  )
 
   return (
-    <div className="nav_container">
+    <div className="NavigationBar">
       <nav>
         <div className="nav_left">
-          <button id="menu" type="button" onPointerEnter={onPointerDropDownMenu}>
+          <button className="NavigationBar_menu_btn" type="button" onPointerEnter={onPointerDropDownMenu}>
             <img src="https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Ficon-menu.png&w=undefined&q=75" alt="❓" />
           </button>
-          <div id="home">
+          <div className='NavigationBar_home_link'>
             <Link to="/">
               <img src="https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fuserweb%2Flogo_wanted_black.png&w=110&q=100" alt="❓" />
             </Link>
@@ -60,12 +64,12 @@ const NavigationBar = ({ setSearchBarFlag }) => {
           <div><Link to="/#none">AI 합격예측</Link><em>Beta</em></div>
         </div>
         <div className="nav_right">
-          <div>
+          <div className='serach_btn'>
             <button onClick={onClickSearchBtn}>
               <SearchIcon />
             </button>
           </div>
-          <div>
+          <div className='login_btn'>
             {
               loginState ? (
                 <>
@@ -77,8 +81,8 @@ const NavigationBar = ({ setSearchBarFlag }) => {
               )
             }
           </div>
-          <div>|</div>
-          <div>
+          <div className='employer_bar'>|</div>
+          <div className='employer_link'>
             <Link to="/#none">기업 서비스</Link>
           </div>
         </div>

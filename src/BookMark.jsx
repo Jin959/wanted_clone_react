@@ -9,9 +9,8 @@ const BookMark = () => {
   const bookmarkList = useSelector(state => state.bookmarkReducer.bookmarkList);
 
   const bookmarkData = jobData.jobs.filter(ele => {
-    if (ele.id !== undefined ) {
-      if (bookmarkList.includes(ele.id)) return true;
-    }
+    if (ele.id === undefined ) return false;
+    if (bookmarkList.includes(ele.id)) return true;
     return false;
   });
 

@@ -1,4 +1,4 @@
-import { useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback } from 'react';
 import './css/modal_resistration.css'
 import { AiOutlineClose } from "react-icons/ai";
 
@@ -6,7 +6,24 @@ import ConsentCheckBox from './ConsentCheckBox';
 import { useDispatch } from 'react-redux';
 import { CLOSE } from '../../redux_module/modalFlag';
 
+import styled, {css} from 'styled-components';
+
+const StyledBtn = styled.button`
+  color: white;
+  background-color: #3366ff;
+
+  ${props => (!props.formValidFlag) &&
+    css`
+      color: #d2cfcd;
+      background-color: #f2f4f7;
+      cursor: default;
+    `
+  }
+`;
+
 const ModalRegistration = ({ email }) => {
+  const [formValidFlag, setFormVaildFlag] = useState(false);
+
   const emailResisitrationInput = useRef(email);
   useEffect(() => {
     emailResisitrationInput.current.value = email;
@@ -14,6 +31,10 @@ const ModalRegistration = ({ email }) => {
 
   const dispatch = useDispatch();
   const onClickClose = useCallback(() => dispatch({type: CLOSE}), [dispatch]);
+
+  const onSubmitResistration = e => {
+    e.preventDefault();
+  }
 
   return (
     <div className="ModalResistration">
@@ -26,7 +47,9 @@ const ModalRegistration = ({ email }) => {
           <AiOutlineClose/>
         </button>
         <div className="modal_main">
-          <form>
+          <form
+            onSubmit={onSubmitResistration}
+          >
             <div className="modal_input">
               <div>이메일</div>
               <input
@@ -80,7 +103,15 @@ const ModalRegistration = ({ email }) => {
           </form>
         </div>
         <div className="modal_footer">
-          <button className="modal_btn modal_disabled" type="button">가입하기</button>
+          <StyledBtn
+            className="modal_btn"
+            formValidFlag={formValidFlag}
+            type="button"
+            onClick={formValidFlag ? onSubmitResistration : undefined}
+            disabled={!formValidFlag && 'disabled'}
+          >
+            가입하기
+          </StyledBtn>
         </div>
       </div>
     </div>

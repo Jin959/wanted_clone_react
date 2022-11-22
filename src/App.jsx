@@ -1,5 +1,5 @@
 import './css/css_reset.css';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import  { Routes, Route } from 'react-router-dom';
 import { useSelector } from 'react-redux';
 
@@ -14,23 +14,25 @@ import Footer from './components/footer/Footer';
 import Modal from './components/modal/Modal';
 import SearchBar from './components/modal/SearchBar';
 
+import styled, {css} from 'styled-components';
+
+const AppControllScrollFixing = styled.div`  
+  ${({limitScrollFlag}) => 
+    limitScrollFlag &&
+    css`
+      overflow: hidden;
+      width: 100vw;
+      height: 100vh;
+    `
+  };
+`;
+
 function App() {
   const [limitScrollFlag, setLimitScrollFlag] = useState(false);
   const [searchBarFlag, setSearchBarFlag] = useState(false);
-  const appBody = useRef();
+  
   const modalFlag = useSelector(state => state.modalFlagReducer.flag);
 
-  useEffect(() => {
-    if (limitScrollFlag) {
-      appBody.current.style.overflow = 'hidden';
-      appBody.current.style.width = '100vw';
-      appBody.current.style.height = '100vh';
-    } else {
-      appBody.current.style.overflow = '';
-      appBody.current.style.width = '';
-      appBody.current.style.height = '';
-    }
-  }, [limitScrollFlag]);
 
   useEffect(() => {
     if(modalFlag !== 0) setLimitScrollFlag(true);
@@ -38,7 +40,10 @@ function App() {
   },[modalFlag]);
 
   return (
-    <div className="App" ref={appBody}>
+    <AppControllScrollFixing
+      className='App'
+      limitScrollFlag={limitScrollFlag}
+    >
       <NavigationBar
         setSearchBarFlag={setSearchBarFlag}
       />
@@ -61,7 +66,7 @@ function App() {
         <Route path="/bookmarks" element={<BookMark/>}/>
       </Routes>
       <Footer />
-    </div>
+    </AppControllScrollFixing>
   );
 }
 export default App;

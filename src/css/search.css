@@ -43,6 +43,8 @@
 
 .Search-company_list_container {
   position: relative;
+  display: flex;
+  flex-wrap: wrap;
   
   max-width: 1060px;
   width: 87.72%;

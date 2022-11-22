@@ -1,4 +1,4 @@
-import './css/map.css'
+import styles from './css/map.module.scss';
 import { useRef, useEffect, useCallback } from "react";
 import { Link } from 'react-router-dom';
 
@@ -23,7 +23,7 @@ const Map = () => {
 
   return (
     <div
-      className="Map"
+      className={`${styles.map}`}
     >
       <div>
         <span>마감일</span>
@@ -34,7 +34,7 @@ const Map = () => {
         <span>서울 용산구 한강대로 366 트윈시티 남산 2 패스트파이브</span>
       </div>
       <Link to="#none"
-        className='Map-map_link'
+        className={`${styles.link}`}
       >
         <div
           ref={mapEl}

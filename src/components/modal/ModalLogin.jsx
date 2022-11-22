@@ -6,6 +6,32 @@ import { AiOutlineClose } from "react-icons/ai";
 import { useDispatch } from 'react-redux';
 import { CLOSE, RESISTRATION } from '../../redux_module/modalFlag';
 
+import styled, {css} from 'styled-components';
+
+const StyledInput = styled.input`
+  &:focus {
+    border: 1px solid #3366ff;
+    ${props => (!props.validFlag && props.length > 0) &&
+      css`
+        border: 1px solid red;
+      `
+    };
+  }
+`;
+
+const StyledBtn = styled.button`
+  color: white;
+  background-color: #3366ff;
+
+  ${props => (!props.formValidFlag) &&
+    css`
+      color: #d2cfcd;
+      background-color: #f2f4f7;
+      cursor: default;
+    `
+  }
+`;
+
 const users = new Map([
   ["qwer@qwer.qwer", "qwer1234!!"],
   ["jlee@jlee.jlee", "jlee1234!!"],
@@ -57,8 +83,9 @@ const ModalLogin = ({ email, setEmail }) => {
   
   const onSubmitEmailPw = (e) => {
     e.preventDefault();
-    if (!formValidFlag) return;
+    if (!emailValidFlag) return;
     if (users.has(email)) {
+      if (!pwValidFlag) return;
       localStorage.setItem("email", email);
       onLogin();
     } else {
@@ -87,14 +114,9 @@ const ModalLogin = ({ email, setEmail }) => {
             <h2>커리어 성장과 행복을 위한 여정<br />지금 원티드에서 시작하세요.</h2>
             <div className="modal_input">
               <div>이메일</div>
-              <input
-                className={
-                  (!emailValidFlag && email.length > 0) ? (
-                    "modal_input_error"
-                  ) : (
-                    "modal_input_valid"
-                  )
-                }
+              <StyledInput
+                validFlag={emailValidFlag}
+                length={email.length}
                 type="text"
                 name="email"
                 placeholder="이메일을 입력해주세요."
@@ -108,14 +130,9 @@ const ModalLogin = ({ email, setEmail }) => {
                 }
               </div>
               <div>비밀번호</div>
-              <input
-                className={
-                  (!pwValidFlag && pw.length > 0) ? (
-                    "modal_input_error"
-                  ) : (
-                    "modal_input_valid"
-                  )
-                }
+              <StyledInput
+                validFlag={pwValidFlag}
+                length={pw.length}
                 type="password"
                 name="pw"
                 placeholder="비밀번호를 입력해주세요."
@@ -129,25 +146,15 @@ const ModalLogin = ({ email, setEmail }) => {
                 }
               </div>
             </div>
-            {
-              formValidFlag ? (
-                <button
-                  className="modal_btn"
-                  type="button"
-                  onClick={onSubmitEmailPw}
-                >
-                  이메일로 계속하기
-                </button>
-              ) : (
-                <button
-                  className="modal_btn modal_disabled"
-                  disabled='disabled'
-                  type="button"
-                >
-                  이메일로 계속하기
-                </button>
-              )
-            }
+            <StyledBtn
+              className="modal_btn"
+              formValidFlag={formValidFlag}
+              type="button"
+              onClick={formValidFlag ? onSubmitEmailPw : undefined}
+              disabled={!formValidFlag && 'disabled'}
+            >
+              이메일로 계속하기
+            </StyledBtn>
             <div className="modal_login_sns_title">or<br />다음계정으로 계속하기</div>
             <div className="modal_login_sns">
               <button>

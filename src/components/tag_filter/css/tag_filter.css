@@ -88,19 +88,20 @@
 }
 
 .TagFilter-slider_wrapper .scroll_container {
+  display: flex;
+  gap: 8px;
+
   overflow-x: scroll;
-  -ms-overflow-style: none;
 
   overscroll-behavior: contain;
-
   scroll-snap-type: x mandatory;
 }
 
 .TagFilter-slider_wrapper .scroll_container::-webkit-scrollbar {
-  display: none;
+  width: 0;
 }
 
-.TagFilter-slider_wrapper .scroll_container::before{
+.TagFilter-slider_wrapper .scroll_container::before {
   content: "";
   position: absolute;
   top: 0;
@@ -108,10 +109,10 @@
   z-index: 0;
   width: 80px;
   height: 32px;
-  background: linear-gradient(270deg,hsla(0,0%,100%,0),#ffffff 50%);
+  background: linear-gradient(270deg, hsla(0, 0%, 100%, 0), #ffffff 50%);
 }
 
-.TagFilter-slider_wrapper .scroll_container::after{
+.TagFilter-slider_wrapper .scroll_container::after {
   content: "";
   position: absolute;
   top: 0;
@@ -119,7 +120,7 @@
   z-index: 0;
   width: 80px;
   height: 32px;
-  background: linear-gradient(90deg,hsla(0,0%,100%,0),#ffffff 50%);
+  background: linear-gradient(90deg, hsla(0, 0%, 100%, 0), #ffffff 50%);
 }
 
 .TagFilter-slider_wrapper .scroll_prev_btn {
@@ -168,4 +169,27 @@
   width: 1em;
   height: 1em;
   color: #333;
+}
+
+
+
+
+@media(max-width:760px) {
+
+  /*----- TagFilterSlider-btn -------*/
+  .TagFilter-btn_wrapper>div:last-child {
+    display: none;
+  }
+
+  
+/*------------ TagFilterSlider-hr -----------------*/
+  .TagFilter hr {
+    border: 0;
+  }
+
+  /*------------ TagFilterSlider-slider -----------------*/
+
+  .TagFilter-slider_wrapper .scroll_container::-webkit-scrollbar-thumb {
+    background: #c1c1c1;  
+  } 
 }

@@ -3,6 +3,9 @@ import MainGridItem from './MainGridItem';
 import mainGirdData from '../../json/main_grid_data.json';
 
 const MainSection2 = () => {
+
+  const scrollItemTag = ['커리어고민','IT/기술', '인간관계', '조직문화', '라이프스타일', '리더십', '회사생활', '취업/이직', '마케팅', '노무', '개발'];
+
   return (
     <section className="Section2 section">
       <div className="section_wrapper">
@@ -17,17 +20,17 @@ const MainSection2 = () => {
 
         <div className="horizontal_scroll_wrapper">
           <div className="scroll_container">
-            <button><span>커리어고민</span></button>
-            <button><span>IT/기술</span></button>
-            <button><span>인간관계</span></button>
-            <button><span>조직문화</span></button>
-            <button><span>라이프스타일</span></button>
-            <button><span>리더십</span></button>
-            <button><span>회사생활</span></button>
-            <button><span>취업/이직</span></button>
-            <button><span>마케팅</span></button>
-            <button><span>노무</span></button>
-            <button><span>개발</span></button>
+            {
+              scrollItemTag.reduce((acc, ele, idx) => (
+                acc = [...acc, {id: idx, tag: ele}]
+              ), []).map( ele => {
+                return <button
+                    key={ele.id}
+                  >
+                    <span>{ele.tag}</span>
+                  </button>    
+              })
+            }
           </div>
           <button className="scroll_prev_btn">
             <svg viewBox="0 0 18 18"><path d="m6.045 9 5.978-5.977a.563.563 0 1 0-.796-.796L4.852 8.602a.562.562 0 0 0 0 .796l6.375 6.375a.563.563 0 0 0 .796-.796L6.045 9z"></path></svg>
