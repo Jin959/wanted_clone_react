@@ -29,3 +29,60 @@ workspace for conversion of [wanted_clone](https://github.com/Jin959/wanted_clon
 1. 기존 html을 통으로 App.js 컴포넌트에 넣고 실행을 확인 한다.
 2. 재사용되는 기능과 구획별로 컴포넌트를 분리해간다.
 
+
+## 컴포넌트 구성
+
+![App_component.png](./App_component.png)
+
+- [big pages in src](https://github.com/Jin959/wanted_clone_react/tree/master/src)
+
+  * BookMark.jsx - 북마크 모음 페이지
+
+  * Main.jsx - 메인페이지
+
+  * RecruiteDetail.jsx - 채용 상세 페이지
+
+  * RecruiteList.jsx - 채용 리스트 페이지
+
+  * Search.jsx - 검색 결과 페이지
+
+- [small components in components](https://github.com/Jin959/wanted_clone_react/tree/master/src/components)
+
+## 상태관리
+
+- using [react-redux](https://github.com/Jin959/wanted_clone_react/tree/master/src/redux_module)
+
+  * index.js
+
+    + bookmark.js
+
+    + modalFlag.js
+
+## 기타 모듈
+
+- [module](https://github.com/Jin959/wanted_clone_react/tree/master/src/module)
+
+## Dummy Data
+
+- [json](https://github.com/Jin959/wanted_clone_react/tree/master/src/json)
+
+  * using in [MainSection2.jsx](https://github.com/Jin959/wanted_clone_react/blob/master/src/components/main/MainSection2.jsx), [TagFilter.jsx](https://github.com/Jin959/wanted_clone_react/blob/master/src/components/tag_filter/TagFilter.jsx), [RecruiteDetail.jsx](https://github.com/Jin959/wanted_clone_react/blob/master/src/RecruiteDetail.jsx), [RecruiteList.jsx](https://github.com/Jin959/wanted_clone_react/blob/master/src/RecruiteList.jsx), [Search.jsx](https://github.com/Jin959/wanted_clone_react/blob/master/src/Search.jsx), [BookMark.jsx](https://github.com/Jin959/wanted_clone_react/blob/master/src/BookMark.jsx)
+
+## SVG components
+
+- [assets](https://github.com/Jin959/wanted_clone_react/tree/master/src/assets)
+
+## Styling
+
+- Styled-components  
+
+  * [ModalLogin.jsx](https://github.com/Jin959/wanted_clone_react/blob/master/src/components/modal/ModalLogin.jsx)
+
+  * [ModalResistration.jsx](https://github.com/Jin959/wanted_clone_react/blob/master/src/components/modal/ModalRegistration.jsx)
+
+  * [App.jsx](https://github.com/Jin959/wanted_clone_react/blob/master/src/App.jsx) in scroll fixing when modal is on
+
+- SASS 
+
+  * [Map.jsx](https://github.com/Jin959/wanted_clone_react/tree/master/src/components/map)
+    + [map.module.scss](https://github.com/Jin959/wanted_clone_react/blob/master/src/components/map/css/map.module.scss)
