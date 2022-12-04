@@ -58,7 +58,7 @@ const NavigationBar = ({ setSearchBarFlag }) => {
           <div><Link to="/#none">채용</Link></div>
           <div><Link to="/#none">이벤트</Link></div>
           <div><Link to="/#none">직군별 연봉</Link></div>
-          <div><Link to="/#none">이력서</Link></div>
+          <div><Link to="/cv">이력서</Link></div>
           <div><Link to="/#none">커뮤니티</Link><em>New</em></div>
           <div><Link to="/#none">프리랜서</Link></div>
           <div><Link to="/#none">AI 합격예측</Link><em>Beta</em></div>
